@@ -39,6 +39,33 @@
     </article>
   `;
 
+  const atlasMarkup = `
+    <section id="product-atlas-entry" class="atlas-portfolio-entry" aria-labelledby="product-atlas-title">
+      <div class="atlas-entry-topline">
+        <span>PRODUCT SYSTEMS ATLAS / 交互式产品系统图谱</span>
+        <span>03 PRODUCTS · 70+ NODES</span>
+      </div>
+      <div class="atlas-entry-layout">
+        <div>
+          <p>BEYOND THE INTERFACE</p>
+          <h3 id="product-atlas-title">看见产品<br />如何真正运转。</h3>
+        </div>
+        <div class="atlas-entry-copy">
+          <p>从用户、业务闭环、AI 链路到数据底座，交互式拆解 MUYU、MinuteFlow 与 AnswerLoom。每一个节点都可以点击并查看它的职责、价值和上下游关系。</p>
+          <a href="/product-atlas/">
+            进入产品系统图谱
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="atlas-entry-products" aria-hidden="true">
+        <span><b>01</b> MUYU</span>
+        <span><b>02</b> MinuteFlow</span>
+        <span><b>03</b> AnswerLoom</span>
+      </div>
+    </section>
+  `;
+
   function mountAnswerLoom() {
     const work = document.querySelector("#work");
     if (!work) return false;
@@ -50,6 +77,11 @@
       anchor.insertAdjacentHTML("afterend", cardMarkup);
     }
 
+    const answerLoomProject = document.querySelector("#answerloom-project");
+    if (answerLoomProject && !document.querySelector("#product-atlas-entry")) {
+      answerLoomProject.insertAdjacentHTML("afterend", atlasMarkup);
+    }
+
     const nav = document.querySelector('nav[aria-label="主导航"]');
     if (nav && !nav.querySelector(".al-nav-link")) {
       const link = document.createElement("a");
@@ -57,6 +89,14 @@
       link.className = "al-nav-link";
       link.textContent = "AnswerLoom";
       nav.append(link);
+    }
+
+    if (nav && !nav.querySelector(".atlas-nav-link")) {
+      const atlasLink = document.createElement("a");
+      atlasLink.href = "/product-atlas/";
+      atlasLink.className = "atlas-nav-link";
+      atlasLink.textContent = "系统图谱";
+      nav.append(atlasLink);
     }
 
     const productCount = Array.from(document.querySelectorAll("strong")).find(

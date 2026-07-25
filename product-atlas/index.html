@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Product Systems Atlas：交互式探索 AnswerLoom、MinuteFlow 与 MUYU 三款 AI 产品的用户、业务流程、模型链路和数据底座。"
+    />
+    <meta property="og:title" content="Product Systems Atlas｜产品系统图谱" />
+    <meta
+      property="og:description"
+      content="点击架构图中的任意节点，理解三款 AI 产品如何从用户需求走到完整系统。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="stylesheet" href="/product-atlas/atlas.css" />
+    <script defer src="/product-atlas/atlas.js"></script>
+    <title>Product Systems Atlas｜产品系统图谱</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#atlas-main">跳到主要内容</a>
+
+    <header class="atlas-header">
+      <a class="atlas-wordmark" href="/" aria-label="返回周琦致个人网站首页">
+        ZQZHI<span>°</span>
+      </a>
+      <nav aria-label="图谱导航">
+        <a href="#muyu">MUYU</a>
+        <a href="#minuteflow">MinuteFlow</a>
+        <a href="#answerloom">AnswerLoom</a>
+      </nav>
+      <a class="back-home" href="/">返回首页 <span>↗</span></a>
+    </header>
+
+    <main id="atlas-main">
+      <section class="atlas-hero" aria-labelledby="atlas-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="kicker"><span></span>PRODUCT SYSTEMS ATLAS / 2026</p>
+          <h1 id="atlas-title">产品不是页面。<br /><em>它是一套会运转的系统。</em></h1>
+          <p class="hero-intro">
+            从用户、业务闭环、AI 链路到数据底座，拆解三款产品如何真正工作。
+            点击图中的任意节点，查看它的职责、价值和上下游关系。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#muyu">开始探索 <span>↓</span></a>
+            <button id="toggle-hotspots" class="ghost-action" type="button" aria-pressed="false">
+              显示全部交互点
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-index" aria-label="图谱概览">
+          <div><strong>03</strong><span>AI 产品系统</span></div>
+          <div><strong>04</strong><span>架构观察层</span></div>
+          <div><strong>70+</strong><span>可解释节点</span></div>
+        </div>
+      </section>
+
+      <section class="atlas-directory" aria-labelledby="directory-title">
+        <div class="section-label">01 / DIRECTORY</div>
+        <div class="directory-content">
+          <div class="section-heading">
+            <p>图谱目录</p>
+            <h2 id="directory-title">三种产品，三种系统思路。</h2>
+          </div>
+          <div class="directory-list">
+            <a href="#muyu">
+              <span>01</span>
+              <strong>MUYU</strong>
+              <small>可控、可恢复的 AI 影像生成工作流</small>
+              <b>↘</b>
+            </a>
+            <a href="#minuteflow">
+              <span>02</span>
+              <strong>MinuteFlow</strong>
+              <small>本地优先的会议转写与知识沉淀</small>
+              <b>↘</b>
+            </a>
+            <a href="#answerloom">
+              <span>03</span>
+              <strong>AnswerLoom</strong>
+              <small>GEO 品牌可见度与内容优化闭环</small>
+              <b>↘</b>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="answerloom" class="product-chapter" data-product="answerloom">
+        <div class="chapter-index">03</div>
+        <div class="chapter-main">
+          <div class="chapter-heading">
+            <div>
+              <p>GEO INTELLIGENCE WORKSPACE</p>
+              <h2>Answer<span>Loom</span></h2>
+            </div>
+            <p>
+              把品牌在 AI 搜索中的表现，从不可见的结果变成可分析、可优化、
+              可发布、可复测的经营闭环。
+            </p>
+          </div>
+          <div class="chapter-meta" aria-label="AnswerLoom 图谱特征">
+            <span>个人开发者优先</span>
+            <span>双检测通道</span>
+            <span>人工审核发布</span>
+            <span>本地优先存储</span>
+          </div>
+          <div class="diagram-shell">
+            <div class="diagram-toolbar">
+              <span><i></i> 点击发光节点查看说明</span>
+              <span>横向拖动可查看完整大图</span>
+            </div>
+            <div class="diagram-scroll" tabindex="0" aria-label="AnswerLoom 产品架构交互图，可横向滚动">
+              <div class="diagram-stage">
+                <img
+                  src="/product-atlas/images/answerloom-architecture.png"
+                  alt="AnswerLoom 产品架构图，包含用户层、GEO 业务闭环、双检测通道以及能力与数据底座"
+                />
+                <div class="hotspot-layer" aria-label="AnswerLoom 可交互架构节点"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="minuteflow" class="product-chapter" data-product="minuteflow">
+        <div class="chapter-index">02</div>
+        <div class="chapter-main">
+          <div class="chapter-heading">
+            <div>
+              <p>LOCAL-FIRST MEETING INTELLIGENCE</p>
+              <h2>Minute<span>Flow</span></h2>
+            </div>
+            <p>
+              从录音、实时转写、逐字稿校正到 AI 摘要，把一次会议转化为可检索、
+              可复用、留在本地的组织知识。
+            </p>
+          </div>
+          <div class="chapter-meta" aria-label="MinuteFlow 图谱特征">
+            <span>本地 AI</span>
+            <span>实时转写</span>
+            <span>桌面端能力</span>
+            <span>知识沉淀</span>
+          </div>
+          <div class="diagram-shell">
+            <div class="diagram-toolbar">
+              <span><i></i> 点击发光节点查看说明</span>
+              <span>横向拖动可查看完整大图</span>
+            </div>
+            <div class="diagram-scroll" tabindex="0" aria-label="MinuteFlow 产品架构交互图，可横向滚动">
+              <div class="diagram-stage diagram-stage-tall">
+                <img
+                  src="/product-atlas/images/minuteflow-architecture.png"
+                  alt="MinuteFlow 产品架构图，包含会议业务闭环、本地 AI 处理引擎以及桌面能力与数据底座"
+                />
+                <div class="hotspot-layer" aria-label="MinuteFlow 可交互架构节点"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="muyu" class="product-chapter" data-product="muyu">
+        <div class="chapter-index">01</div>
+        <div class="chapter-main">
+          <div class="chapter-heading">
+            <div>
+              <p>CONTROLLED AI IMAGE WORKFLOW</p>
+              <h2>MU<span>YU</span></h2>
+            </div>
+            <p>
+              面向影像创作者的 AI 生产控制台：把图片处理、模型生成、任务轮询、
+              失败恢复和历史作品统一进一条可控链路。
+            </p>
+          </div>
+          <div class="chapter-meta" aria-label="MUYU 图谱特征">
+            <span>影像工作流</span>
+            <span>安全模型网关</span>
+            <span>状态轮询</span>
+            <span>历史作品管理</span>
+          </div>
+          <div class="diagram-shell">
+            <div class="diagram-toolbar">
+              <span><i></i> 点击发光节点查看说明</span>
+              <span>横向拖动可查看完整大图</span>
+            </div>
+            <div class="diagram-scroll" tabindex="0" aria-label="MUYU 产品架构交互图，可横向滚动">
+              <div class="diagram-stage">
+                <img
+                  src="/product-atlas/images/muyu-architecture.png"
+                  alt="MUYU AI 影像创作平台产品架构图，包含用户层、影像创作闭环、AI 生成链路以及能力与数据底座"
+                />
+                <div class="hotspot-layer" aria-label="MUYU 可交互架构节点"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="atlas-outro">
+        <p>THREE PRODUCTS / ONE PRODUCT MINDSET</p>
+        <h2>让复杂能力，沿着用户能够理解的路径发生。</h2>
+        <a href="/">返回个人网站 <span>↗</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 周琦致</span>
+      <span>PRODUCT SYSTEMS ATLAS</span>
+      <a href="mailto:2370318075@qq.com">2370318075@qq.com</a>
+    </footer>
+
+    <dialog id="node-dialog" aria-labelledby="node-title">
+      <div class="dialog-shell">
+        <header class="dialog-header">
+          <div>
+            <span id="node-product">PRODUCT</span>
+            <small id="node-group">GROUP</small>
+          </div>
+          <button id="dialog-close" type="button" aria-label="关闭节点说明">×</button>
+        </header>
+        <div class="dialog-body">
+          <span id="node-number">01</span>
+          <h2 id="node-title">节点名称</h2>
+          <p id="node-summary"></p>
+          <div class="node-detail">
+            <strong>它解决什么问题</strong>
+            <p id="node-detail"></p>
+          </div>
+        </div>
+        <footer class="dialog-footer">
+          <button id="node-prev" type="button">← 上一个节点</button>
+          <span id="node-progress">01 / 01</span>
+          <button id="node-next" type="button">下一个节点 →</button>
+        </footer>
+      </div>
+    </dialog>
+  </body>
+</html>
