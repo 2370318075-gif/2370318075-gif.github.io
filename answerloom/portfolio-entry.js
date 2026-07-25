@@ -79,25 +79,12 @@
   }
 
   function boot() {
-    const revealLinkedProject = () => {
-      if (window.location.hash !== "#answerloom-project") return;
-      requestAnimationFrame(() => {
-        document
-          .querySelector("#answerloom-project")
-          ?.scrollIntoView({ block: "start" });
-      });
-    };
-
-    if (mountAnswerLoom()) {
-      revealLinkedProject();
-      return;
-    }
+    if (mountAnswerLoom()) return;
     const root = document.querySelector("#root");
     if (!root) return;
     const observer = new MutationObserver(() => {
       if (mountAnswerLoom()) {
         observer.disconnect();
-        revealLinkedProject();
       }
     });
     observer.observe(root, { childList: true, subtree: true });
