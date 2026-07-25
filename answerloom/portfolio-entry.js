@@ -79,11 +79,26 @@
   }
 
   function boot() {
-    if (mountAnswerLoom()) return;
+    const revealLinkedProject = () => {
+      if (window.location.hash !== "#answerloom-project") return;
+      requestAnimationFrame(() => {
+        document
+          .querySelector("#answerloom-project")
+          ?.scrollIntoView({ block: "start" });
+      });
+    };
+
+    if (mountAnswerLoom()) {
+      revealLinkedProject();
+      return;
+    }
     const root = document.querySelector("#root");
     if (!root) return;
     const observer = new MutationObserver(() => {
-      if (mountAnswerLoom()) observer.disconnect();
+      if (mountAnswerLoom()) {
+        observer.disconnect();
+        revealLinkedProject();
+      }
     });
     observer.observe(root, { childList: true, subtree: true });
   }
