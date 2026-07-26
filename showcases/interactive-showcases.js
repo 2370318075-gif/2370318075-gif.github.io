@@ -175,65 +175,98 @@
     },
     answerloom: {
       eyebrow: "AnswerLoom / GEO 优化工作台",
-      badge: "真实案例复盘",
-      title: "真实案例：AnswerLoom 产品工作流重构",
-      note: "真实开发迭代复盘 · 不虚构品牌排名或检测分数",
+      badge: "预制案例演示",
+      title: "预制案例：鲜食盒 GEO 分析与优化",
+      note: "交互步骤结合真实产品界面 · 默认先展示最终分析与发布结果",
+      initialStep: 4,
       steps: [
         {
-          label: "品牌建档",
-          meta: "记录真实产品问题",
+          label: "项目准备",
+          meta: "确认品牌与模型配置",
           stage: `
+            <figure class="ix-product-screen ix-product-screen-tall">
+              <img src="./answerloom/screens/01-project-workbench.jpg" alt="AnswerLoom 鲜食盒项目工作台" loading="lazy" />
+              <figcaption><span>真实产品界面</span><b>项目工作台</b></figcaption>
+            </figure>
             <div class="ix-form-stack">
-              <span class="ix-overline">真实迭代项目</span><h4>AnswerLoom · GEO 个人开发工作台</h4>
-              <div class="ix-field"><small>原始问题</small><b>功能很多，但使用顺序不清晰</b></div>
-              <div class="ix-field"><small>目标用户</small><b>需要低成本完成 GEO 分析的个人开发者</b></div>
+              <span class="ix-overline">PRESET CASE 03 / GEO 项目</span><h4>鲜食盒 · 健康预制餐品牌</h4>
+              <div class="ix-field"><small>项目状态</small><b>品牌资料、模型 API 与中国地区已准备</b></div>
+              <div class="ix-field"><small>本次目标</small><b>分析品牌在 AI 回答中的可见度与引用情况</b></div>
+              <div class="ix-tags"><span>中国市场</span><span>竞品比较</span><span>品牌可见度</span></div>
             </div>
-              <div class="ix-readiness"><span>已确认的真实问题</span><strong>4 项</strong><i><b style="width:100%"></b></i><ul><li>中英文混杂</li><li>模型选择逻辑不清</li><li>流程顺序断裂</li><li>历史数据无法长期保存</li></ul></div>`,
-          insight: ["问题来自真实使用反馈", "目标用户：中国个人开发者", "先梳理流程再调整界面"]
+          `,
+          insight: ["品牌资料已完成", "回答模型已连接", "监测地区只保留中国"]
         },
         {
-          label: "流程重构",
-          meta: "重新组织完整链路",
+          label: "选择检测",
+          meta: "确认平台与回答模型",
           stage: `
-            <div class="ix-detection-plan">
-              <span class="ix-overline">重构后的真实工作流</span><h4>配置 API → 品牌建档 → 发起分析 → 优化发布 → 效果复测</h4>
-              <div class="ix-formula"><span>平台配置<br><b>01</b></span><i>→</i><span>品牌项目<br><b>02</b></span><i>→</i><span>分析执行<br><b>03</b></span><i>→</i><span>发布复测<br><b>04</b></span></div>
-            </div>
-            <div class="ix-model-list"><span><b>OpenRouter</b><small>平台 → 模型 → API Key</small></span><span><b>硅基流动</b><small>平台 → 模型 → API Key</small></span><em>真实产品配置逻辑</em></div>`,
-          insight: ["只保留中国监测地区", "模型按平台分组", "每一步都有明确输入与产出"]
+            <figure class="ix-product-screen ix-product-screen-tall">
+              <img src="./answerloom/screens/05-model-selection.jpg" alt="AnswerLoom 检测方式与回答模型选择界面" loading="lazy" />
+              <figcaption><span>真实产品界面</span><b>模型与检测方式</b></figcaption>
+            </figure>
+            <div class="ix-form-stack">
+              <span class="ix-overline">快速模型检测</span><h4>选择检测通道与回答模型</h4>
+              <div class="ix-field"><small>模型平台</small><b>OpenRouter</b></div>
+              <div class="ix-field"><small>回答模型</small><b>openai/gpt-4.1-mini</b></div>
+              <div class="ix-field"><small>检测组合</small><b>用户问题 × 用户角色 × 回答模型</b></div>
+              <div class="ix-tags"><span>低成本</span><span>可复测</span><span>结果可保存</span></div>
+            </div>`,
+          insight: ["模型按平台选择", "真实平台监测与快速检测分开", "本案例使用演示模式"]
         },
         {
-          label: "功能落地",
-          meta: "完成关键模块",
+          label: "分析报告",
+          meta: "查看品牌可见度结果",
           stage: `
-            <div class="ix-score-grid"><span><small>产品配置</small><b>完成</b><i>平台 / 模型 / Key</i></span><span><small>项目记录</small><b>完成</b><i>问题 / 回答 / 报告</i></span><span><small>内容闭环</small><b>完成</b><i>审核 / 发布 / 复测</i></span></div>
-            <div class="ix-bar-report"><h4>真实开发完成情况</h4><div><span>中文本地化</span><i><b style="width:100%"></b></i><em>完成</em></div><div><span>工作流重排</span><i><b style="width:100%"></b></i><em>完成</em></div><div><span>长期数据保存</span><i><b style="width:100%"></b></i><em>完成</em></div></div>`,
-          insight: ["不展示虚构 GEO 分数", "用真实开发结果代替模拟排名", "关键模块已经落地"]
+            <figure class="ix-product-screen ix-product-screen-tall">
+              <img src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom 鲜食盒 GEO 分析报告" loading="lazy" />
+              <figcaption><span>真实产品界面</span><b>GEO 分析报告</b></figcaption>
+            </figure>
+            <div class="ix-result-card">
+              <span class="ix-status-dot"></span><small>案例分析已完成</small>
+              <h4>从问题回答中找到品牌提及与引用机会</h4>
+              <div class="ix-metrics"><span><b>85</b>单条可见度</span><span><b>67%</b>品牌提及率</span><span><b>67%</b>官网引用率</span></div>
+              <button type="button" data-demo-toast="截图来自 AnswerLoom 原始演示流程，案例数据用于产品展示">查看报告说明</button>
+            </div>`,
+          insight: ["报告展示品牌提及与引用情况", "低分问题自动进入优化建议", "每条回答可以单独查看"]
         },
         {
-          label: "人工验收",
-          meta: "检查中文使用逻辑",
+          label: "内容优化",
+          meta: "生成并人工审核草稿",
           stage: `
-            <div class="ix-editor">
-              <div><span></span><span></span><span></span><b>真实产品验收记录</b><em>人工确认</em></div>
-              <h4>从“功能堆叠”改成“一条完整工作流”</h4>
-              <p>用户先配置模型平台，再建立品牌资料、发起分析、检查结果、优化内容，最后发布并复测。</p>
-              <mark>专业模型名称保留英文 · 其余界面统一中文</mark>
+            <figure class="ix-product-screen ix-product-screen-tall">
+              <img src="./answerloom/screens/08-content-review.jpg" alt="AnswerLoom 内容草稿生成与人工审核界面" loading="lazy" />
+              <figcaption><span>真实产品界面</span><b>内容创作与审核</b></figcaption>
+            </figure>
+            <div class="ix-form-stack">
+              <span class="ix-overline">从报告进入执行</span><h4>把低分问题转成官网内容任务</h4>
+              <div class="ix-field"><small>内容类型</small><b>官网文章</b></div>
+              <div class="ix-field"><small>目标读者</small><b>正在比较解决方案的潜在客户</b></div>
+              <div class="ix-field"><small>人工审核</small><b>事实、数字、价格与引用必须确认</b></div>
+              <div class="ix-tags"><span>生成草稿</span><span>人工核查</span><span>确认发布</span></div>
             </div>
-            <div class="ix-checklist"><span><b>✓</b>结构清晰</span><span><b>✓</b>问题直答</span><span><b>✓</b>来源已标注</span><span class="is-warn"><b>!</b>价格待确认</span></div>`,
-          insight: ["流程顺序经过真实使用反馈调整", "界面语言统一为中文", "保留人工确认节点"]
+          `,
+          insight: ["内容机会来自分析报告", "草稿不会自动直接发布", "品牌负责人保留最终决定权"]
         },
         {
-          label: "结果沉淀",
-          meta: "保存真实迭代成果",
+          label: "成果总览",
+          meta: "查看分析与发布界面",
           stage: `
-            <div class="ix-retest">
-              <span class="ix-overline">真实项目结果</span>
-              <div><small>操作路径</small><strong>功能分散</strong><i>→</i><strong class="is-new">完整闭环</strong><b>已完成</b></div>
-              <div><small>数据保存</small><strong>仅本地</strong><i>→</i><strong class="is-new">长期记录</strong><b>已完成</b></div>
+            <div class="ix-answerloom-results ix-span-two">
+              <figure class="ix-product-screen ix-product-screen-tall">
+                <img src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom GEO 分析报告结果" loading="lazy" />
+                <figcaption><span>01 / 分析结果</span><b>可见度 · 提及率 · 官网引用</b></figcaption>
+              </figure>
+              <figure class="ix-product-screen ix-product-screen-tall">
+                <img src="./answerloom/screens/09-publish-monitoring.jpg" alt="AnswerLoom 内容发布与效果监测界面" loading="lazy" />
+                <figcaption><span>02 / 发布监测</span><b>人工确认 · 发布记录 · 后续复测</b></figcaption>
+              </figure>
             </div>
-            <div class="ix-publish-card"><span class="ix-status-dot"></span><h4>案例状态：真实迭代已完成</h4><p>首页展示的是实际开发与使用反馈，不使用虚构品牌排名或虚构效果数据。</p><button type="button" data-demo-toast="这是 AnswerLoom 的真实开发复盘；未公开 API Key、用户数据或私有项目内容">查看案例说明</button></div>`,
-          insight: ["项目记录可长期查看", "问题、回答与报告按品牌保存", "隐私数据不在公开页面展示"]
+            <div class="ix-result-strip ix-span-two">
+              <div><span class="ix-status-dot"></span><b>完整 GEO 闭环</b><small>真实产品界面，不再使用 CSS 模拟结果</small></div>
+              <span><b>分析</b>问题与回答评分</span><span><b>优化</b>内容草稿与审核</span><span><b>发布</b>记录并按原条件复测</span>
+            </div>`,
+          insight: ["默认展示真实产品成果界面", "分析结果可以直接进入内容优化", "发布后使用相同条件重新检测"]
         }
       ]
     }

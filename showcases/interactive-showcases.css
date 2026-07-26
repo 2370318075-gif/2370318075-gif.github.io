@@ -443,6 +443,27 @@
   min-height: 310px;
 }
 
+.ix-product-screen-tall {
+  height: 560px;
+  background: #eef3fb;
+}
+
+.ix-product-screen-tall img {
+  min-height: 0;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.ix-answerloom-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ix-answerloom-results .ix-product-screen-tall {
+  height: 520px;
+}
+
 .ix-product-screen figcaption,
 .ix-product-result figcaption {
   position: absolute;
@@ -1033,6 +1054,10 @@
   .ix-retest > div { grid-template-columns: 1fr auto auto auto; }
   .ix-retest small { grid-column: 1 / -1; }
   .ix-product-screen img { min-height: 220px; }
+  .ix-product-screen-tall,
+  .ix-answerloom-results .ix-product-screen-tall { height: auto; }
+  .ix-product-screen-tall img { width: 100%; height: auto; min-height: 0; object-fit: contain; }
+  .ix-answerloom-results { grid-template-columns: 1fr; }
   .ix-product-screen figcaption,
   .ix-product-result figcaption { position: static; border: 0; border-radius: 0; }
   .ix-product-result { aspect-ratio: auto; }
