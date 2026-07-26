@@ -11,7 +11,7 @@
           <strong id="answerloom-title">Answer<span>Loom</span></strong>
         </div>
         <h4>把 AI 搜索里的品牌黑盒，变成一条可执行的优化工作流。</h4>
-        <p>面向个人开发者的生成式引擎优化工作台：从品牌建档、模型检测和分析报告，到内容审核、发布、监控与复测，形成完整闭环。下方使用预生成模板进行交互展示，不调用真实模型或 API。</p>
+        <p>面向个人开发者的生成式引擎优化工作台：从品牌建档、模型检测和分析报告，到内容审核、发布、监控与复测，形成完整闭环。下方只保留一个真实产品迭代案例，不使用虚构品牌排名或虚构检测分数。</p>
         <div class="al-portfolio-tags" aria-label="AnswerLoom 核心能力">
           <span>GEO / AEO</span>
           <span>多模型检测</span>
@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="al-flow-heading">
-        <span>INTERACTIVE TEMPLATE / 交互式流程演示</span>
-        <strong>从建立项目，到发布后重新检测。</strong>
-        <small>所有品牌、回答与结果均为预生成模拟数据</small>
+        <span>REAL PRODUCT CASE / 真实产品案例</span>
+        <strong>从功能堆叠，到一条完整、可执行的工作流。</strong>
+        <small>案例来自真实开发过程，用户与隐私数据已脱敏</small>
       </div>
       <div class="al-flow-gallery" data-template-slot="answerloom" aria-label="AnswerLoom 交互式模板演示"></div>
     </article>
