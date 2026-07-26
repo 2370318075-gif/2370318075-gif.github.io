@@ -331,6 +331,85 @@
 .ix-mountain-one { left: -10%; }
 .ix-mountain-two { right: -18%; bottom: -23%; background: #0b1114; transform: scale(1.22); }
 
+.ix-anime-portrait {
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255, 181, 228, 0.28), transparent 22%),
+    radial-gradient(circle at 78% 20%, rgba(170, 139, 255, 0.32), transparent 20%),
+    linear-gradient(155deg, #2f2144, #171523 62%, #0d1013);
+}
+
+.ix-anime-halo {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(255, 201, 235, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(224, 159, 255, 0.22);
+  transform: translateX(-50%);
+}
+
+.ix-anime-hair {
+  position: absolute;
+  top: 76px;
+  left: 50%;
+  width: 142px;
+  height: 176px;
+  border-radius: 54% 54% 46% 46% / 38% 38% 62% 62%;
+  background: linear-gradient(135deg, #d9c8ff, #8b6ec2 58%, #3d2c60);
+  box-shadow: 0 20px 40px rgba(17, 10, 31, 0.5);
+  transform: translateX(-50%);
+}
+
+.ix-anime-face {
+  position: absolute;
+  top: 104px;
+  left: 50%;
+  width: 92px;
+  height: 112px;
+  border-radius: 46% 46% 52% 52%;
+  background: linear-gradient(145deg, #ffe9dc, #efc8c9);
+  transform: translateX(-50%);
+}
+
+.ix-anime-face i {
+  position: absolute;
+  top: 47px;
+  width: 13px;
+  height: 8px;
+  border-radius: 50%;
+  background: #58426f;
+  box-shadow: inset 0 -2px 0 #bba4ff;
+}
+
+.ix-anime-face i:first-child { left: 20px; }
+.ix-anime-face i:nth-child(2) { right: 20px; }
+
+.ix-anime-face b {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  width: 16px;
+  height: 5px;
+  border-bottom: 2px solid #b56f86;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.ix-anime-costume {
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  width: 196px;
+  height: 118px;
+  border-radius: 60px 60px 0 0;
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(200, 255, 72, 0.72) 49% 51%, transparent 52%),
+    linear-gradient(145deg, #2b2344, #12151d);
+  transform: translateX(-50%);
+}
+
 .ix-scene-label {
   position: absolute;
   bottom: 16px;
@@ -551,6 +630,33 @@
 .ix-mini-scene.is-after { border-left: 1px solid var(--ix-accent); background: radial-gradient(circle at 65% 20%, #d9f3ce 0 4%, transparent 5%), linear-gradient(155deg, #173039, #101518 65%); }
 .ix-mini-scene::before { position: absolute; inset: 36% 0 0; background: #0c1214; clip-path: polygon(0 100%, 0 52%, 24% 9%, 48% 66%, 72% 0, 100% 53%, 100% 100%); content: ""; }
 .ix-mini-scene span { position: relative; z-index: 1; padding: 5px 8px; border-radius: 999px; background: rgba(0, 0, 0, 0.5); font-size: 10px; }
+
+.ix-mini-scene.ix-anime-before,
+.ix-mini-scene.ix-anime-after {
+  background:
+    radial-gradient(ellipse at 50% 44%, #efc8c9 0 15%, transparent 16%),
+    radial-gradient(ellipse at 50% 47%, #74608e 0 27%, transparent 28%),
+    linear-gradient(155deg, #332743, #15151f 68%);
+}
+
+.ix-mini-scene.ix-anime-after {
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 213, 238, 0.9) 0 3%, transparent 4%),
+    radial-gradient(circle at 26% 25%, rgba(207, 177, 255, 0.8) 0 4%, transparent 5%),
+    radial-gradient(ellipse at 50% 44%, #ffe5de 0 15%, transparent 16%),
+    radial-gradient(ellipse at 50% 47%, #b295de 0 27%, transparent 28%),
+    linear-gradient(155deg, #6c416f, #251b3b 68%);
+}
+
+.ix-mini-scene.ix-anime-before::before,
+.ix-mini-scene.ix-anime-after::before {
+  inset: auto 25% -18% 25%;
+  width: 50%;
+  height: 60%;
+  border-radius: 50% 50% 0 0;
+  background: #181420;
+  clip-path: none;
+}
 
 .ix-result-card {
   display: flex;

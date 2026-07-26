@@ -5,87 +5,90 @@
     muyu: {
       eyebrow: "MUYU / AI 影像创作平台",
       badge: "预制案例演示",
-      title: "预制案例：夜间人像活动海报",
-      note: "完整体验产品流程 · 案例素材与结果均为演示内容",
+      title: "预制案例：二次元角色人像精修",
+      note: "完整体验二次元人像修图流程 · 案例素材与结果均为演示内容",
       steps: [
         {
-          label: "上传原片",
-          meta: "导入案例原片",
+          label: "导入人像",
+          meta: "上传漫展角色原片",
           stage: `
-            <div class="ix-scene ix-scene-photo" aria-label="抽象原片预览">
-              <span class="ix-moon"></span><span class="ix-mountain ix-mountain-one"></span><span class="ix-mountain ix-mountain-two"></span>
-              <span class="ix-scene-label">RAW · 24 MP</span>
+            <div class="ix-scene ix-anime-portrait" aria-label="二次元角色人像案例预览">
+              <span class="ix-anime-halo"></span>
+              <span class="ix-anime-hair"></span>
+              <span class="ix-anime-face"><i></i><i></i><b></b></span>
+              <span class="ix-anime-costume"></span>
+              <span class="ix-scene-label">COSPLAY RAW · 24 MP</span>
             </div>
             <div class="ix-form-stack">
-              <span class="ix-overline">PRESET CASE 01 / 夜间活动</span>
-              <h4>城市音乐节 · 主唱人像海报</h4>
-              <div class="ix-file-row"><span>concert_portrait_01.dng</span><b>预制素材</b></div>
-              <div class="ix-tags"><span>4:5 海报</span><span>人物主体</span><span>夜景舞台</span></div>
+              <span class="ix-overline">PRESET CASE 01 / 二次元返图</span>
+              <h4>漫展角色人像 · 樱色幻想主题</h4>
+              <div class="ix-file-row"><span>cosplay_portrait_01.dng</span><b>预制素材</b></div>
+              <div class="ix-tags"><span>角色人像</span><span>妆面细节</span><span>服装纹理</span></div>
             </div>`,
-          insight: ["案例类型：活动海报", "目标：突出人物与舞台氛围", "素材为预制演示内容"]
+          insight: ["案例类型：二次元角色返图", "目标：保留本人特征并强化角色感", "素材为预制演示内容"]
         },
         {
-          label: "选择配方",
-          meta: "选择海报风格",
+          label: "选择风格",
+          meta: "确定角色视觉方向",
           stage: `
             <div class="ix-form-stack ix-span-two">
-              <span class="ix-overline">案例预设 / 视觉方向</span>
-              <h4>为夜间舞台选择统一的海报基调</h4>
+              <span class="ix-overline">二次元人像风格预设</span>
+              <h4>先确定角色氛围，再进入五官与质感精修</h4>
               <div class="ix-choice-grid">
-                <button type="button"><small>01</small><b>电影蓝调</b><span>冷色 · 克制 · 高反差</span></button>
-                <button type="button" class="is-selected"><small>02</small><b>霓虹舞台</b><span>青紫 · 高反差 · 舞台光晕</span></button>
-                <button type="button"><small>03</small><b>霓虹街头</b><span>洋红 · 青蓝 · 湿地反射</span></button>
+                <button type="button"><small>01</small><b>日系通透</b><span>柔光 · 低对比 · 清透肤色</span></button>
+                <button type="button" class="is-selected"><small>02</small><b>樱色幻想</b><span>粉紫 · 梦幻光晕 · 细腻肤质</span></button>
+                <button type="button"><small>03</small><b>赛博角色</b><span>青蓝 · 霓虹轮廓 · 高反差</span></button>
               </div>
             </div>`,
-          insight: ["案例选择：霓虹舞台", "主体保护：开启", "可随时切换其他预设"]
+          insight: ["案例选择：樱色幻想", "本人特征保护：开启", "预设只影响色彩与氛围"]
         },
         {
-          label: "叠加特效",
-          meta: "完成局部优化",
+          label: "人像精修",
+          meta: "调整五官与细节",
           stage: `
             <div class="ix-effect-preview">
               <i class="ix-rain rain-a"></i><i class="ix-rain rain-b"></i><i class="ix-rain rain-c"></i>
-              <span>案例特效组合</span>
-              <b>舞台光束 / 轻雾 / 霓虹反射</b>
+              <span>二次元人像精修面板</span>
+              <b>肤质 / 五官 / 发丝 / 服装细节</b>
             </div>
             <div class="ix-control-list">
-              <div><span>主体保护</span><i style="--value:92%"></i><b>92</b></div>
-              <div><span>舞台光束</span><i style="--value:72%"></i><b>72</b></div>
-              <div><span>环境轻雾</span><i style="--value:48%"></i><b>48</b></div>
-              <div><span>霓虹反射</span><i style="--value:64%"></i><b>64</b></div>
+              <div><span>肤质净化</span><i style="--value:64%"></i><b>64</b></div>
+              <div><span>五官精修</span><i style="--value:46%"></i><b>46</b></div>
+              <div><span>发丝增强</span><i style="--value:78%"></i><b>78</b></div>
+              <div><span>服装纹理</span><i style="--value:72%"></i><b>72</b></div>
             </div>`,
-          insight: ["四项参数可以单独调整", "原图与结果可以对照", "案例配置可一键复用"]
+          insight: ["保留本人面部识别特征", "四类细节可分别控制", "支持原图与精修图对比"]
         },
         {
-          label: "输出设置",
-          meta: "适配使用场景",
+          label: "背景氛围",
+          meta: "补充角色世界观",
           stage: `
             <div class="ix-form-stack ix-span-two">
-              <span class="ix-overline">交付规格</span>
-              <h4>音乐节预热海报 · 社交平台竖版</h4>
+              <span class="ix-overline">角色氛围与交付设置</span>
+              <h4>樱花光斑背景 · 漫展返图竖版</h4>
               <div class="ix-option-rows">
+                <div><span>背景氛围</span><b><i>纯色棚拍</i><i class="is-on">樱花光斑</i><i>赛博街景</i></b></div>
                 <div><span>画面比例</span><b><i>1:1</i><i class="is-on">4:5</i><i>9:16</i></b></div>
                 <div><span>输出尺寸</span><b><i>1080P</i><i class="is-on">2K</i><i>4K</i></b></div>
-                <div><span>文件格式</span><b><i>JPG</i><i class="is-on">PNG</i><i>WEBP</i></b></div>
               </div>
             </div>`,
-          insight: ["用途：活动预热海报", "案例选择：2K / 4:5", "导出格式：PNG"]
+          insight: ["背景不会覆盖人物轮廓", "案例选择：樱花光斑", "输出：2K / 4:5"]
         },
         {
-          label: "生成交付",
-          meta: "查看预制成片",
+          label: "导出返图",
+          meta: "查看精修结果",
           stage: `
             <div class="ix-compare">
-              <div class="ix-mini-scene is-before"><span>案例原片</span></div>
-              <div class="ix-mini-scene is-after"><span>海报成片</span><i></i></div>
+              <div class="ix-mini-scene ix-anime-before is-before"><span>角色原片</span></div>
+              <div class="ix-mini-scene ix-anime-after is-after"><span>二次元精修</span><i></i></div>
             </div>
             <div class="ix-result-card">
               <span class="ix-status-dot"></span><small>预制案例演示完成</small>
-              <h4>城市音乐节_主唱海报_v01.png</h4>
-              <div class="ix-metrics"><span><b>2K</b>案例尺寸</span><span><b>4:5</b>海报比例</span><span><b>PNG</b>导出格式</span></div>
+              <h4>漫展角色_樱色幻想_精修_v01.png</h4>
+              <div class="ix-metrics"><span><b>2K</b>返图尺寸</span><span><b>4:5</b>人像比例</span><span><b>PNG</b>导出格式</span></div>
               <button type="button" data-demo-toast="这是用于展示 MUYU 工作流的预制案例，不会生成或下载真实文件">查看案例说明</button>
             </div>`,
-          insight: ["完整展示一次影像工作流", "所有内容均为预制演示", "不会调用真实生成模型"]
+          insight: ["完整展示二次元人像修图流程", "所有内容均为预制演示", "不会调用真实生成模型"]
         }
       ]
     },
