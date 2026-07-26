@@ -11,7 +11,7 @@
           <strong id="answerloom-title">Answer<span>Loom</span></strong>
         </div>
         <h4>把 AI 搜索里的品牌黑盒，变成一条可执行的优化工作流。</h4>
-        <p>面向个人开发者的生成式引擎优化工作台：从品牌建档、模型检测和分析报告，到内容审核、发布、监控与复测，形成完整闭环。下方仅展示产品演示流程截图。</p>
+        <p>面向个人开发者的生成式引擎优化工作台：从品牌建档、模型检测和分析报告，到内容审核、发布、监控与复测，形成完整闭环。下方使用预生成模板进行交互展示，不调用真实模型或 API。</p>
         <div class="al-portfolio-tags" aria-label="AnswerLoom 核心能力">
           <span>GEO / AEO</span>
           <span>多模型检测</span>
@@ -21,21 +21,11 @@
         </div>
       </div>
       <div class="al-flow-heading">
-        <span>SIMULATED RUN / 产品流程演示</span>
+        <span>INTERACTIVE TEMPLATE / 交互式流程演示</span>
         <strong>从建立项目，到发布后重新检测。</strong>
-        <small>演示品牌、回答与结果均为模拟数据</small>
+        <small>所有品牌、回答与结果均为预生成模拟数据</small>
       </div>
-      <div class="al-flow-gallery" aria-label="AnswerLoom 完整演示流程截图">
-        <figure><a class="al-image-link" href="./answerloom/screens/01-project-workbench.jpg" target="_blank" rel="noopener" aria-label="查看项目工作台大图"><img loading="lazy" src="./answerloom/screens/01-project-workbench.jpg" alt="AnswerLoom 项目工作台，展示品牌、模型 API 与中国监测地区状态" /></a><figcaption><b>01</b><span>项目工作台<small>品牌资料与模型 API 已准备</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/02-analysis-goal.jpg" target="_blank" rel="noopener" aria-label="查看选择分析目标大图"><img loading="lazy" src="./answerloom/screens/02-analysis-goal.jpg" alt="AnswerLoom 选择 GEO 分析目标，当前选择竞品比较" /></a><figcaption><b>02</b><span>选择分析目标<small>明确本次想解决的问题</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/03-user-questions.jpg" target="_blank" rel="noopener" aria-label="查看生成用户问题大图"><img loading="lazy" src="./answerloom/screens/03-user-questions.jpg" alt="AnswerLoom 根据品牌资料生成中国用户可能提出的问题" /></a><figcaption><b>03</b><span>生成用户问题<small>确认、修改或补充真实提问</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/04-user-roles.jpg" target="_blank" rel="noopener" aria-label="查看选择用户角色大图"><img loading="lazy" src="./answerloom/screens/04-user-roles.jpg" alt="AnswerLoom 选择普通消费者等用户角色" /></a><figcaption><b>04</b><span>选择用户角色<small>模拟不同人群的关注重点</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/05-model-selection.jpg" target="_blank" rel="noopener" aria-label="查看选择回答模型大图"><img loading="lazy" src="./answerloom/screens/05-model-selection.jpg" alt="AnswerLoom 选择 OpenRouter 或硅基流动的回答模型" /></a><figcaption><b>05</b><span>选择回答模型<small>确定本次检测组合与调用规模</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/06-analysis-report.jpg" target="_blank" rel="noopener" aria-label="查看分析报告大图"><img loading="lazy" src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom GEO 分析报告，展示可见度、品牌提及和官网引用" /></a><figcaption><b>06</b><span>查看分析报告<small>找到低分问题和内容机会</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/07-content-opportunity.jpg" target="_blank" rel="noopener" aria-label="查看内容机会大图"><img loading="lazy" src="./answerloom/screens/07-content-opportunity.jpg" alt="AnswerLoom 根据报告选择内容机会与内容类型" /></a><figcaption><b>07</b><span>确定内容机会<small>把分析缺口转成创作任务</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/08-content-review.jpg" target="_blank" rel="noopener" aria-label="查看内容创作与审核大图"><img loading="lazy" src="./answerloom/screens/08-content-review.jpg" alt="AnswerLoom AI 内容草稿编辑与人工审核界面" /></a><figcaption><b>08</b><span>内容创作与审核<small>人工核实事实、数字和引用</small></span></figcaption></figure>
-        <figure><a class="al-image-link" href="./answerloom/screens/09-publish-monitoring.jpg" target="_blank" rel="noopener" aria-label="查看发布与效果监控大图"><img loading="lazy" src="./answerloom/screens/09-publish-monitoring.jpg" alt="AnswerLoom WordPress 直接发布和手动登记发布信息界面" /></a><figcaption><b>09</b><span>发布与效果监控<small>登记网址并使用原条件复测</small></span></figcaption></figure>
-      </div>
+      <div class="al-flow-gallery" data-template-slot="answerloom" aria-label="AnswerLoom 交互式模板演示"></div>
     </article>
   `;
 
