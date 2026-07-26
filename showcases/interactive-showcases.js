@@ -4,39 +4,40 @@
   const demos = {
     muyu: {
       eyebrow: "MUYU / AI 影像创作平台",
-      title: "真实案例：影像工作室社交内容交付",
-      note: "真实内部交付复盘 · 客户与素材信息已脱敏",
+      badge: "预制案例演示",
+      title: "预制案例：夜间人像活动海报",
+      note: "完整体验产品流程 · 案例素材与结果均为演示内容",
       steps: [
         {
           label: "上传原片",
-          meta: "接收真实交付需求",
+          meta: "导入案例原片",
           stage: `
             <div class="ix-scene ix-scene-photo" aria-label="抽象原片预览">
               <span class="ix-moon"></span><span class="ix-mountain ix-mountain-one"></span><span class="ix-mountain ix-mountain-two"></span>
               <span class="ix-scene-label">RAW · 24 MP</span>
             </div>
             <div class="ix-form-stack">
-              <span class="ix-overline">我们影像 · 内部交付项目</span>
-              <h4>活动人物照 · 社交平台竖版内容</h4>
-              <div class="ix-file-row"><span>客户原片</span><b>信息已脱敏</b></div>
-              <div class="ix-tags"><span>竖版发布</span><span>人物主体</span><span>当日交付</span></div>
+              <span class="ix-overline">PRESET CASE 01 / 夜间活动</span>
+              <h4>城市音乐节 · 主唱人像海报</h4>
+              <div class="ix-file-row"><span>concert_portrait_01.dng</span><b>预制素材</b></div>
+              <div class="ix-tags"><span>4:5 海报</span><span>人物主体</span><span>夜景舞台</span></div>
             </div>`,
-          insight: ["真实来源：影像工作室", "目标：缩短后期时间", "原片与客户信息已脱敏"]
+          insight: ["案例类型：活动海报", "目标：突出人物与舞台氛围", "素材为预制演示内容"]
         },
         {
           label: "选择配方",
-          meta: "按交付要求定调",
+          meta: "选择海报风格",
           stage: `
             <div class="ix-form-stack ix-span-two">
-              <span class="ix-overline">本次实际采用的视觉方向</span>
-              <h4>先锁定风格，再调整局部效果</h4>
+              <span class="ix-overline">案例预设 / 视觉方向</span>
+              <h4>为夜间舞台选择统一的海报基调</h4>
               <div class="ix-choice-grid">
                 <button type="button"><small>01</small><b>电影蓝调</b><span>冷色 · 克制 · 高反差</span></button>
-                <button type="button" class="is-selected"><small>02</small><b>活动纪实</b><span>自然肤色 · 清晰主体 · 稳定质感</span></button>
+                <button type="button" class="is-selected"><small>02</small><b>霓虹舞台</b><span>青紫 · 高反差 · 舞台光晕</span></button>
                 <button type="button"><small>03</small><b>霓虹街头</b><span>洋红 · 青蓝 · 湿地反射</span></button>
               </div>
             </div>`,
-          insight: ["已选：活动纪实", "主体保护：开启", "方案由摄影师人工确认"]
+          insight: ["案例选择：霓虹舞台", "主体保护：开启", "可随时切换其他预设"]
         },
         {
           label: "叠加特效",
@@ -44,16 +45,16 @@
           stage: `
             <div class="ix-effect-preview">
               <i class="ix-rain rain-a"></i><i class="ix-rain rain-b"></i><i class="ix-rain rain-c"></i>
-              <span>实际调整项</span>
-              <b>肤色保护 / 背景层次 / 轻颗粒</b>
+              <span>案例特效组合</span>
+              <b>舞台光束 / 轻雾 / 霓虹反射</b>
             </div>
             <div class="ix-control-list">
-              <div><span>肤色保护</span><i style="--value:92%"></i><b>高</b></div>
-              <div><span>背景层次</span><i style="--value:68%"></i><b>中</b></div>
-              <div><span>主体锐度</span><i style="--value:76%"></i><b>中</b></div>
-              <div><span>自然颗粒</span><i style="--value:24%"></i><b>低</b></div>
+              <div><span>主体保护</span><i style="--value:92%"></i><b>92</b></div>
+              <div><span>舞台光束</span><i style="--value:72%"></i><b>72</b></div>
+              <div><span>环境轻雾</span><i style="--value:48%"></i><b>48</b></div>
+              <div><span>霓虹反射</span><i style="--value:64%"></i><b>64</b></div>
             </div>`,
-          insight: ["摄影师保留最终控制权", "原图与结果可以对照", "参数可复用于同组照片"]
+          insight: ["四项参数可以单独调整", "原图与结果可以对照", "案例配置可一键复用"]
         },
         {
           label: "输出设置",
@@ -61,77 +62,78 @@
           stage: `
             <div class="ix-form-stack ix-span-two">
               <span class="ix-overline">交付规格</span>
-              <h4>社交平台竖版内容 · 高清交付</h4>
+              <h4>音乐节预热海报 · 社交平台竖版</h4>
               <div class="ix-option-rows">
                 <div><span>画面比例</span><b><i>1:1</i><i class="is-on">4:5</i><i>9:16</i></b></div>
                 <div><span>输出尺寸</span><b><i>1080P</i><i class="is-on">2K</i><i>4K</i></b></div>
                 <div><span>文件格式</span><b><i>JPG</i><i class="is-on">PNG</i><i>WEBP</i></b></div>
               </div>
             </div>`,
-          insight: ["目标：社交媒体发布", "覆盖 1K—4K 输出", "格式按客户要求选择"]
+          insight: ["用途：活动预热海报", "案例选择：2K / 4:5", "导出格式：PNG"]
         },
         {
           label: "生成交付",
-          meta: "复盘真实结果",
+          meta: "查看预制成片",
           stage: `
             <div class="ix-compare">
-              <div class="ix-mini-scene is-before"><span>客户原片</span></div>
-              <div class="ix-mini-scene is-after"><span>人工确认成片</span><i></i></div>
+              <div class="ix-mini-scene is-before"><span>案例原片</span></div>
+              <div class="ix-mini-scene is-after"><span>海报成片</span><i></i></div>
             </div>
             <div class="ix-result-card">
-              <span class="ix-status-dot"></span><small>真实项目已完成交付</small>
-              <h4>活动人物照 · 社交平台成片</h4>
-              <div class="ix-metrics"><span><b>4 步</b>完成配置</span><span><b>1K—4K</b>输出范围</span><span><b>约 67%</b>流程提效</span></div>
-              <button type="button" data-demo-toast="真实案例已完成交付；客户图片与文件不在公开页面展示">查看案例说明</button>
+              <span class="ix-status-dot"></span><small>预制案例演示完成</small>
+              <h4>城市音乐节_主唱海报_v01.png</h4>
+              <div class="ix-metrics"><span><b>2K</b>案例尺寸</span><span><b>4:5</b>海报比例</span><span><b>PNG</b>导出格式</span></div>
+              <button type="button" data-demo-toast="这是用于展示 MUYU 工作流的预制案例，不会生成或下载真实文件">查看案例说明</button>
             </div>`,
-          insight: ["结果经过摄影师人工确认", "流程效率较原方式提升约 67%", "客户素材不在公开页面展示"]
+          insight: ["完整展示一次影像工作流", "所有内容均为预制演示", "不会调用真实生成模型"]
         }
       ]
     },
     brandloom: {
       eyebrow: "BRANDLOOM / AI 品牌策略平台",
-      title: "真实案例：独立创作者品牌提案内测",
-      note: "真实内测复盘 · 品牌名称与商业信息已脱敏",
+      badge: "预制案例演示",
+      title: "预制案例：栖屿咖啡品牌提案",
+      note: "完整体验品牌策略流程 · 品牌与内容均为演示设定",
       steps: [
         {
           label: "输入简报",
           meta: "对齐品牌背景",
           stage: `
             <div class="ix-brief-card">
-              <span class="ix-overline">真实内测项目 · 名称已脱敏</span><h4>独立创作者个人品牌</h4>
-              <p>把零散的个人定位和视觉偏好，整理成一份能够沟通与提案的品牌方案。</p>
-              <div class="ix-tags"><span>个人品牌</span><span>内容创作</span><span>可信赖</span><span>可持续</span></div>
+              <span class="ix-overline">PRESET CASE 02 / 新消费品牌</span><h4>栖屿咖啡 QIYU COFFEE</h4>
+              <p>为城市独处者提供一杯安静、松弛、可以短暂停靠的社区咖啡。</p>
+              <div class="ix-tags"><span>社区咖啡</span><span>安静松弛</span><span>城市停靠</span><span>自然质感</span></div>
             </div>
             <div class="ix-brief-facts">
-              <div><small>真实问题</small><b>方向多，但无法形成统一表达</b></div>
-              <div><small>主要场景</small><b>作品发布与合作提案</b></div>
-              <div><small>案例目标</small><b>完成一份可讲清楚的品牌提案</b></div>
+              <div><small>目标人群</small><b>22—35 岁城市青年</b></div>
+              <div><small>主要场景</small><b>通勤停靠与周末独处</b></div>
+              <div><small>案例目标</small><b>形成可落地的品牌定位与视觉提案</b></div>
             </div>`,
-          insight: ["案例来自真实产品内测", "商业信息已脱敏", "需求由用户本人确认"]
+          insight: ["案例类型：社区咖啡品牌", "品牌资料为预制演示设定", "可完整体验提案流程"]
         },
         {
           label: "策略生成",
           meta: "选择定位方向",
           stage: `
             <div class="ix-form-stack ix-span-two">
-              <span class="ix-overline">本次内测生成的三条方向</span>
-              <h4>从真实简报中收敛出一个主方向</h4>
+              <span class="ix-overline">案例策略方向</span>
+              <h4>从“卖咖啡”收敛到“城市停靠点”</h4>
               <div class="ix-strategy-list">
-                <button type="button"><b>01 工具理性</b><span>强调效率、可靠与结构</span></button>
-                <button type="button" class="is-selected"><b>02 安静创造</b><span>强调专注、留白与个人表达</span></button>
-                <button type="button"><b>03 灵感伙伴</b><span>强调陪伴、启发与成长</span></button>
+                <button type="button"><b>01 日常能量</b><span>强调高效、稳定与通勤补给</span></button>
+                <button type="button" class="is-selected"><b>02 城市停靠</b><span>强调独处、松弛与短暂停留</span></button>
+                <button type="button"><b>03 社区连接</b><span>强调邻里、熟悉感与共同活动</span></button>
               </div>
             </div>`,
-          insight: ["最终选择：安静创造", "选择经过用户人工确认", "未公开真实品牌文案"]
+          insight: ["案例选择：城市停靠", "品牌承诺：给忙碌留一小段空白", "语气：自然、安静、不过度营销"]
         },
         {
           label: "视觉系统",
           meta: "查看设计语言",
           stage: `
             <div class="ix-brand-board">
-              <small>WORDMARK / 脱敏示意</small>
-              <strong>CREATOR<span>°</span></strong>
-              <p>真实方案结构，品牌名称已替换。</p>
+              <small>WORDMARK / CASE 02</small>
+              <strong>QIYU<span>°</span></strong>
+              <p>Pause here, then move on.</p>
             </div>
             <div class="ix-palette-board">
               <span style="--swatch:#0a0c0b">INK</span>
@@ -139,38 +141,39 @@
               <span style="--swatch:#f1f0e9">PAPER</span>
               <div><small>字体组合</small><b>Inter / 思源黑体</b></div>
             </div>`,
-          insight: ["保留真实方案结构", "敏感名称使用占位字标", "视觉选择由用户确认"]
+          insight: ["案例字标：QIYU°", "主色：Signal Green", "中英文组合已建立"]
         },
         {
           label: "人工确认",
           meta: "选择最终方案",
           stage: `
             <div class="ix-review-grid">
-              <button type="button"><small>方案 A</small><b>CREATOR°</b><span>结构更强，表达更外向</span></button>
-              <button type="button" class="is-selected"><small>方案 B · 已选</small><b>CREATOR/</b><span>更克制，适合个人品牌长期使用</span></button>
+              <button type="button"><small>方案 A</small><b>QIYU°</b><span>更轻快，适合社交媒体传播</span></button>
+              <button type="button" class="is-selected"><small>方案 B · 已选</small><b>栖屿 /</b><span>更安静，适合门店与包装长期使用</span></button>
             </div>
             <div class="ix-approval-note">
               <span class="ix-status-dot"></span><b>设计负责人已确认</b>
               <p>保留方案 B 的字标结构，辅助色减少到一组。</p>
             </div>`,
-          insight: ["真实人工确认节点", "反馈被写入下一阶段", "方案 B 进入交付"]
+          insight: ["案例选择：方案 B", "保留中式文字识别度", "辅助色缩减为一组"]
         },
         {
           label: "提案交付",
           meta: "整理品牌资产",
           stage: `
             <div class="ix-delivery">
-              <span class="ix-overline">真实内测提案已完成</span>
-              <h4>Creator_Brand_Proposal_v1.0</h4>
+              <span class="ix-overline">预制品牌提案已就绪</span>
+              <h4>QIYU_COFFEE_Brand_Proposal_v1.0</h4>
               <ul><li><b>✓</b>品牌定位与语气指南</li><li><b>✓</b>标识与安全空间规范</li><li><b>✓</b>色彩、字体与应用示例</li><li><b>✓</b>社交媒体模板规范</li></ul>
             </div>
-            <div class="ix-delivery-score"><small>内测用户</small><strong>18</strong><span>人</span><button type="button" data-demo-toast="案例来自真实内测；为保护用户信息，公开页面不提供原始提案文件">查看案例说明</button></div>`,
-          insight: ["种子用户：18 人", "独立完成率：86%", "内测满意度：4.2 / 5"]
+            <div class="ix-delivery-score"><small>案例交付物</small><strong>4</strong><span>类</span><button type="button" data-demo-toast="这是用于展示 BRANDLOOM 工作流的预制案例，不会创建真实品牌资产">查看案例说明</button></div>`,
+          insight: ["品牌定位与语气", "字标、色彩和字体规范", "社交媒体与门店应用示例"]
         }
       ]
     },
     answerloom: {
       eyebrow: "AnswerLoom / GEO 优化工作台",
+      badge: "真实案例复盘",
       title: "真实案例：AnswerLoom 产品工作流重构",
       note: "真实开发迭代复盘 · 不虚构品牌排名或检测分数",
       steps: [
@@ -243,7 +246,7 @@
     root.innerHTML = `
       <header class="ix-demo-header">
         <div><span>${config.eyebrow}</span><h3>${config.title}</h3></div>
-        <p><i></i>真实案例复盘<small>${config.note}</small></p>
+        <p><i></i>${config.badge}<small>${config.note}</small></p>
       </header>
       <div class="ix-demo-shell">
         <nav class="ix-demo-steps" aria-label="${config.eyebrow}演示步骤"></nav>
