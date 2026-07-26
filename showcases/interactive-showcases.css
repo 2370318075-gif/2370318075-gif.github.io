@@ -421,6 +421,105 @@
   backdrop-filter: blur(8px);
 }
 
+.ix-product-screen,
+.ix-product-result {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--ix-line);
+  border-radius: 18px;
+  background: #080b0d;
+}
+
+.ix-product-screen img,
+.ix-product-result img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ix-product-screen img {
+  min-height: 310px;
+}
+
+.ix-product-screen figcaption,
+.ix-product-result figcaption {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  color: #f1f0e9;
+  background: rgba(8, 11, 13, 0.72);
+  font-size: 10px;
+  backdrop-filter: blur(12px);
+}
+
+.ix-product-screen figcaption span,
+.ix-product-result figcaption span:first-child {
+  color: var(--ix-accent);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.ix-product-result {
+  aspect-ratio: 1672 / 941;
+  background: #f1f0e9;
+}
+
+.ix-product-result img {
+  object-fit: contain;
+}
+
+.ix-result-strip {
+  display: grid;
+  grid-template-columns: 1.35fr repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ix-result-strip > div,
+.ix-result-strip > span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 82px;
+  padding: 14px 16px;
+  border: 1px solid var(--ix-line);
+  border-radius: 12px;
+  background: rgba(10, 12, 11, 0.86);
+  color: var(--ix-muted);
+  font-size: 10px;
+}
+
+.ix-result-strip > div {
+  position: relative;
+  padding-left: 40px;
+}
+
+.ix-result-strip .ix-status-dot {
+  position: absolute;
+  left: 18px;
+}
+
+.ix-result-strip b {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ix-text);
+  font-size: 12px;
+}
+
+.ix-result-strip small {
+  color: var(--ix-muted);
+  font-size: 9px;
+}
+
 .ix-file-row,
 .ix-field {
   display: flex;
@@ -933,6 +1032,11 @@
   .ix-demo-inspector ul { grid-template-columns: 1fr; }
   .ix-retest > div { grid-template-columns: 1fr auto auto auto; }
   .ix-retest small { grid-column: 1 / -1; }
+  .ix-product-screen img { min-height: 220px; }
+  .ix-product-screen figcaption,
+  .ix-product-result figcaption { position: static; border: 0; border-radius: 0; }
+  .ix-product-result { aspect-ratio: auto; }
+  .ix-result-strip { grid-template-columns: 1fr 1fr; }
   .ix-option-rows > div { grid-template-columns: 1fr; gap: 10px; }
   .ix-option-rows b { overflow-x: auto; }
   .ix-control-list > div { grid-template-columns: 88px 1fr 24px; }
