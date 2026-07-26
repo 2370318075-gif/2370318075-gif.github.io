@@ -184,33 +184,33 @@
           label: "项目准备",
           meta: "确认品牌与模型配置",
           stage: `
-            <figure class="ix-product-screen ix-product-screen-tall">
-              <img src="./answerloom/screens/01-project-workbench.jpg" alt="AnswerLoom 鲜食盒项目工作台" loading="lazy" />
-              <figcaption><span>真实产品界面</span><b>项目工作台</b></figcaption>
-            </figure>
-            <div class="ix-form-stack">
-              <span class="ix-overline">PRESET CASE 03 / GEO 项目</span><h4>鲜食盒 · 健康预制餐品牌</h4>
-              <div class="ix-field"><small>项目状态</small><b>品牌资料、模型 API 与中国地区已准备</b></div>
-              <div class="ix-field"><small>本次目标</small><b>分析品牌在 AI 回答中的可见度与引用情况</b></div>
-              <div class="ix-tags"><span>中国市场</span><span>竞品比较</span><span>品牌可见度</span></div>
+            <div class="ix-answerloom-viewer ix-span-two">
+              <div class="ix-answerloom-browserbar"><i></i><i></i><i></i><span>AnswerLoom · 鲜食盒项目工作台</span><b>完整界面 · 无裁切</b></div>
+              <figure class="ix-answerloom-fullscreen">
+                <img src="./answerloom/screens/01-project-workbench.jpg" alt="AnswerLoom 鲜食盒项目工作台完整界面" loading="lazy" />
+                <figcaption><span>01 / 项目准备</span><b>品牌资料、模型 API 与中国地区均已准备</b><a href="./answerloom/screens/01-project-workbench.jpg" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
+              </figure>
             </div>
-          `,
+            <div class="ix-result-strip ix-span-two">
+              <div><span class="ix-status-dot"></span><b>鲜食盒 GEO 项目</b><small>预制案例，使用真实产品界面展示</small></div>
+              <span><b>品牌资料</b>已完成</span><span><b>回答模型</b>已连接</span><span><b>监测地区</b>中国</span>
+            </div>`,
           insight: ["品牌资料已完成", "回答模型已连接", "监测地区只保留中国"]
         },
         {
           label: "选择检测",
           meta: "确认平台与回答模型",
           stage: `
-            <figure class="ix-product-screen ix-product-screen-tall">
-              <img src="./answerloom/screens/05-model-selection.jpg" alt="AnswerLoom 检测方式与回答模型选择界面" loading="lazy" />
-              <figcaption><span>真实产品界面</span><b>模型与检测方式</b></figcaption>
-            </figure>
-            <div class="ix-form-stack">
-              <span class="ix-overline">快速模型检测</span><h4>选择检测通道与回答模型</h4>
-              <div class="ix-field"><small>模型平台</small><b>OpenRouter</b></div>
-              <div class="ix-field"><small>回答模型</small><b>openai/gpt-4.1-mini</b></div>
-              <div class="ix-field"><small>检测组合</small><b>用户问题 × 用户角色 × 回答模型</b></div>
-              <div class="ix-tags"><span>低成本</span><span>可复测</span><span>结果可保存</span></div>
+            <div class="ix-answerloom-viewer ix-span-two">
+              <div class="ix-answerloom-browserbar"><i></i><i></i><i></i><span>AnswerLoom · 检测方式与模型</span><b>完整界面 · 无裁切</b></div>
+              <figure class="ix-answerloom-fullscreen">
+                <img src="./answerloom/screens/05-model-selection.jpg" alt="AnswerLoom 检测方式与回答模型选择完整界面" loading="lazy" />
+                <figcaption><span>02 / 选择检测</span><b>快速模型检测 · OpenRouter · GPT-4.1 mini</b><a href="./answerloom/screens/05-model-selection.jpg" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
+              </figure>
+            </div>
+            <div class="ix-result-strip ix-span-two">
+              <div><span class="ix-status-dot"></span><b>回答模型已确定</b><small>真实平台监测与快速检测明确区分</small></div>
+              <span><b>平台</b>OpenRouter</span><span><b>模型</b>GPT-4.1 mini</span><span><b>结果</b>可保存与复测</span>
             </div>`,
           insight: ["模型按平台选择", "真实平台监测与快速检测分开", "本案例使用演示模式"]
         },
@@ -218,15 +218,16 @@
           label: "分析报告",
           meta: "查看品牌可见度结果",
           stage: `
-            <figure class="ix-product-screen ix-product-screen-tall">
-              <img src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom 鲜食盒 GEO 分析报告" loading="lazy" />
-              <figcaption><span>真实产品界面</span><b>GEO 分析报告</b></figcaption>
-            </figure>
-            <div class="ix-result-card">
-              <span class="ix-status-dot"></span><small>案例分析已完成</small>
-              <h4>从问题回答中找到品牌提及与引用机会</h4>
-              <div class="ix-metrics"><span><b>85</b>单条可见度</span><span><b>67%</b>品牌提及率</span><span><b>67%</b>官网引用率</span></div>
-              <button type="button" data-demo-toast="截图来自 AnswerLoom 原始演示流程，案例数据用于产品展示">查看报告说明</button>
+            <div class="ix-answerloom-viewer ix-span-two">
+              <div class="ix-answerloom-browserbar"><i></i><i></i><i></i><span>AnswerLoom · GEO 分析报告</span><b>完整界面 · 无裁切</b></div>
+              <figure class="ix-answerloom-fullscreen">
+                <img src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom 鲜食盒 GEO 分析报告完整界面" loading="lazy" />
+                <figcaption><span>03 / 分析报告</span><b>品牌提及 · 官网引用 · 单条回答评分</b><a href="./answerloom/screens/06-analysis-report.jpg" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
+              </figure>
+            </div>
+            <div class="ix-result-strip ix-span-two">
+              <div><span class="ix-status-dot"></span><b>案例分析已完成</b><small>从问题回答中定位品牌与引用机会</small></div>
+              <span><b>85</b>单条可见度</span><span><b>67%</b>品牌提及率</span><span><b>67%</b>官网引用率</span>
             </div>`,
           insight: ["报告展示品牌提及与引用情况", "低分问题自动进入优化建议", "每条回答可以单独查看"]
         },
@@ -234,36 +235,37 @@
           label: "内容优化",
           meta: "生成并人工审核草稿",
           stage: `
-            <figure class="ix-product-screen ix-product-screen-tall">
-              <img src="./answerloom/screens/08-content-review.jpg" alt="AnswerLoom 内容草稿生成与人工审核界面" loading="lazy" />
-              <figcaption><span>真实产品界面</span><b>内容创作与审核</b></figcaption>
-            </figure>
-            <div class="ix-form-stack">
-              <span class="ix-overline">从报告进入执行</span><h4>把低分问题转成官网内容任务</h4>
-              <div class="ix-field"><small>内容类型</small><b>官网文章</b></div>
-              <div class="ix-field"><small>目标读者</small><b>正在比较解决方案的潜在客户</b></div>
-              <div class="ix-field"><small>人工审核</small><b>事实、数字、价格与引用必须确认</b></div>
-              <div class="ix-tags"><span>生成草稿</span><span>人工核查</span><span>确认发布</span></div>
+            <div class="ix-answerloom-viewer ix-span-two">
+              <div class="ix-answerloom-browserbar"><i></i><i></i><i></i><span>AnswerLoom · 内容创作与审核</span><b>完整界面 · 无裁切</b></div>
+              <figure class="ix-answerloom-fullscreen">
+                <img src="./answerloom/screens/08-content-review.jpg" alt="AnswerLoom 内容草稿生成与人工审核完整界面" loading="lazy" />
+                <figcaption><span>04 / 内容优化</span><b>生成草稿 · 人工核查 · 确认发布</b><a href="./answerloom/screens/08-content-review.jpg" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
+              </figure>
             </div>
-          `,
+            <div class="ix-result-strip ix-span-two">
+              <div><span class="ix-status-dot"></span><b>从报告进入执行</b><small>把低分问题转成官网内容任务</small></div>
+              <span><b>内容类型</b>官网文章</span><span><b>目标读者</b>潜在客户</span><span><b>审核要求</b>事实与引用</span>
+            </div>`,
           insight: ["内容机会来自分析报告", "草稿不会自动直接发布", "品牌负责人保留最终决定权"]
         },
         {
           label: "成果总览",
           meta: "查看分析与发布界面",
           stage: `
-            <div class="ix-answerloom-results ix-span-two">
-              <figure class="ix-product-screen ix-product-screen-tall">
-                <img src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom GEO 分析报告结果" loading="lazy" />
-                <figcaption><span>01 / 分析结果</span><b>可见度 · 提及率 · 官网引用</b></figcaption>
-              </figure>
-              <figure class="ix-product-screen ix-product-screen-tall">
-                <img src="./answerloom/screens/09-publish-monitoring.jpg" alt="AnswerLoom 内容发布与效果监测界面" loading="lazy" />
-                <figcaption><span>02 / 发布监测</span><b>人工确认 · 发布记录 · 后续复测</b></figcaption>
+            <div class="ix-answerloom-viewer ix-span-two">
+              <div class="ix-answerloom-browserbar"><i></i><i></i><i></i><span>AnswerLoom · 完整 GEO 成果</span><b>横屏查看 · 无裁切</b></div>
+              <div class="ix-answerloom-tabs" role="tablist" aria-label="切换 AnswerLoom 成果界面">
+                <button type="button" class="is-active" data-answer-screen-src="./answerloom/screens/06-analysis-report.jpg" data-answer-screen-alt="AnswerLoom GEO 分析报告完整界面" data-answer-screen-label="分析报告 · 可见度、提及率与官网引用">分析报告</button>
+                <button type="button" data-answer-screen-src="./answerloom/screens/08-content-review.jpg" data-answer-screen-alt="AnswerLoom 内容草稿与人工审核完整界面" data-answer-screen-label="内容优化 · 草稿生成与人工审核">内容优化</button>
+                <button type="button" data-answer-screen-src="./answerloom/screens/09-publish-monitoring.jpg" data-answer-screen-alt="AnswerLoom 发布与效果监测完整界面" data-answer-screen-label="发布监测 · 发布记录与后续复测">发布监测</button>
+              </div>
+              <figure class="ix-answerloom-fullscreen">
+                <img data-answer-screen-image src="./answerloom/screens/06-analysis-report.jpg" alt="AnswerLoom GEO 分析报告完整界面" loading="lazy" />
+                <figcaption><span data-answer-screen-label>分析报告 · 可见度、提及率与官网引用</span><b>点击上方标签切换完整产品界面</b><a data-answer-screen-link href="./answerloom/screens/06-analysis-report.jpg" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
               </figure>
             </div>
             <div class="ix-result-strip ix-span-two">
-              <div><span class="ix-status-dot"></span><b>完整 GEO 闭环</b><small>真实产品界面，不再使用 CSS 模拟结果</small></div>
+              <div><span class="ix-status-dot"></span><b>完整 GEO 闭环</b><small>横屏完整展示，不裁掉侧栏或内容区</small></div>
               <span><b>分析</b>问题与回答评分</span><span><b>优化</b>内容草稿与审核</span><span><b>发布</b>记录并按原条件复测</span>
             </div>`,
           insight: ["默认展示真实产品成果界面", "分析结果可以直接进入内容优化", "发布后使用相同条件重新检测"]
@@ -342,6 +344,24 @@
         toast.classList.add("is-visible");
         window.clearTimeout(root.toastTimer);
         root.toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 2600);
+      }
+      const answerScreenButton = event.target.closest("[data-answer-screen-src]");
+      if (answerScreenButton) {
+        const viewer = answerScreenButton.closest(".ix-answerloom-viewer");
+        const image = viewer?.querySelector("[data-answer-screen-image]");
+        const label = viewer?.querySelector("[data-answer-screen-label]");
+        const link = viewer?.querySelector("[data-answer-screen-link]");
+        if (image && label && link) {
+          image.src = answerScreenButton.dataset.answerScreenSrc;
+          image.alt = answerScreenButton.dataset.answerScreenAlt;
+          label.textContent = answerScreenButton.dataset.answerScreenLabel;
+          link.href = answerScreenButton.dataset.answerScreenSrc;
+          viewer.querySelectorAll("[data-answer-screen-src]").forEach((button) => {
+            const isActive = button === answerScreenButton;
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-selected", String(isActive));
+          });
+        }
       }
     });
 
