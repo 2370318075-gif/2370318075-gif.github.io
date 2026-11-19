@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>周琦致 · 创作者书桌</title>
+<link rel="stylesheet" href="style.css?v=17">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/jsm/"}}</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div class="vignette"></div>
+<div class="grain"></div>
+<div class="loading" id="loading" data-p="0%"><span>正在布置书桌</span></div>
+
+<header class="brand"><b>周琦致</b><span>AI 产品经理</span></header>
+<details class="credits"><summary>模型来源</summary>
+  <p>Sketchfab（CC BY / CC BY-NC-ND）：Studio Display — crumhirnd；MacBook Pro 13" — timblewee；Mechanical Keyboard — mreslan；Magic Mouse — umezawa；iPhone 15 Pro Max — Polyman_3D；Minimal Flip Clock — ObviousBonus8984。</p>
+  <p>Poly Haven（CC0）：台灯、相机、笔记本、绿植、椅子、随身听、笔筒、相框、材质与 HDRI。ambientCG（CC0）：毛毡、拉丝铝、塑料、纸张、指纹材质。</p>
+</details>
+<p class="hint" id="hint">点击桌上的物品 · 视角会轻微跟随鼠标</p>
+<div class="tip" id="tip"></div>
+
+<nav class="dock" id="dock" aria-label="快速导航">
+  <button data-key="card">名片</button>
+  <button data-key="notes">便利贴</button>
+  <button data-key="notebook">笔记本</button>
+  <button data-key="monitor">显示器</button>
+  <button data-key="laptop">电脑</button>
+  <button data-key="camera">相机</button>
+  <button data-key="phone">手机</button>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+
+<section class="panel" id="panel" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="close" id="close" aria-label="关闭">×</button>
+
+  <article data-panel="card" class="p-card">
+    <p class="k">ABOUT · 关于我</p>
+    <h1>周琦致</h1>
+    <p class="role">AI 产品经理 · 2027 届数字媒体技术本科</p>
+    <p class="lead">专注 AIGC 与 Agent 工作流的产品化。从用户调研、PRD 一路推进到上线运营；用 Vibe Coding 把想法直接做成可用的产品，再用数据和反馈持续迭代。</p>
+    <dl>
+      <div><dt>邮箱</dt><dd><a href="mailto:2370318075@qq.com">2370318075@qq.com</a></dd></div>
+      <div><dt>学校</dt><dd>河北科技师范学院 · 数字媒体技术</dd></div>
+      <div><dt>方向</dt><dd>AI 产品 · Agent · AIGC 影像与音频</dd></div>
+    </dl>
+  </article>
+
+  <article data-panel="notes" class="p-notes">
+    <div class="note" style="--r:-2deg"><b>01</b><h3>AI 技术产品化</h3><p>LLM、RAG、Prompt 与多 Agent 编排；搭建多模型评测体系支撑选型。</p></div>
+    <div class="note" style="--r:1.5deg"><b>02</b><h3>0→1 落地</h3><p>调研、定价、PRD 到上线验收独立推进，主导商业产品上线。</p></div>
+    <div class="note" style="--r:1deg"><b>03</b><h3>全链路文档</h3><p>MRD / BRD / PRD / 竞品分析 / 调研报告 / 上线文档。</p></div>
+    <div class="note" style="--r:-1.5deg"><b>04</b><h3>视觉与内容</h3><p>摄影、剪辑与新媒体运营，抖音累计粉丝 2.6 万。</p></div>
+  </article>
+
+  <article data-panel="notebook" class="p-notebook">
+    <div class="page">
+      <p class="k">2026.08 — 2026.11</p>
+      <h2>Nyro 火星超频</h2>
+      <p class="role">AI 产品经理</p>
+      <ul>
+        <li>12 人深度访谈 + 86 份问卷，输出需求优先级</li>
+        <li>0→1 负责核心产品 Stream Ready 上线</li>
+        <li>开发 4 款内部工具：Spotify 预览、Ableton VST3 插件、Web 预览、CapCut 歌词对齐</li>
+        <li>每日自动爬取音乐资讯并发布到网站</li>
+        <li>策划剪辑融资路演宣传片</li>
+      </ul>
+    </div>
+    <div class="page">
+      <p class="k">2026.02 — 2026.05</p>
+      <h2>我们影像</h2>
+      <p class="role">AI 创作与流程优化 · AI 产品经理</p>
+      <ul>
+        <li>调研并引入 AI 修图、选片、快剪等工具</li>
+        <li>梳理拍摄到交付全流程，建立标准化工作流</li>
+        <li>写真、婚礼业务的 AI 辅助创作</li>
+        <li>设计 AI 预览图、创意短片等增值服务</li>
+        <li>单次 AI 创作耗时 15 → 5 分钟</li>
+      </ul>
+    </div>
+  </article>
+
+  <article data-panel="monitor" class="p-laptop">
+    <div class="bar"><i></i><i></i><i></i><span>projects — 周琦致</span></div>
+    <div class="tiles">
+      <div class="tile hl"><p class="k">商业产品 · 2026</p><h3>Stream Ready</h3><p>浏览器端 AI 音频工作台，Chat Agent 驱动 DSP，接入 Stripe 完成商业化。</p></div>
+      <div class="tile"><p class="k">已上线</p><h3>MUYU</h3><p>AI 影像创作控制台，结构化预设约束人物与构图，创作耗时 15 → 5 分钟。</p></div>
+      <div class="tile"><p class="k">个人项目</p><h3>BRANDLOOM</h3><p>多阶段 Agent 品牌全案平台，18 名种子用户内测，满意度 4.2/5。</p></div>
+      <div class="tile"><p class="k">个人项目</p><h3>上菜准</h3><p>餐厅智能划菜看板，按份划菜、拼音检索、POS 订单快照对接。</p></div>
+    </div>
+  </article>
+
+  <article data-panel="laptop" class="p-head">
+    <p class="k">FEATURED · stream-ready.com</p>
+    <h2>Stream Ready</h2>
+    <div class="wave" aria-hidden="true"></div>
+    <div class="cols">
+      <div><h3>Agent 交互</h3><p>自然语言 → 意图识别 → DSP 工具调用 → 执行回执，区分咨询与执行。</p></div>
+      <div><h3>音频能力</h3><p>浏览器 DSP、自动母带、流媒体预览、GPU 分轨与去伪影一体化。</p></div>
+      <div><h3>商业化</h3><p>免费体验 + 订阅计次，Stripe 正式环境支付上线。</p></div>
+      <div><h3>可观测性</h3><p>PostHog 埋点 + traceId 日志后台 + 飞书告警。</p></div>
+    </div>
+  </article>
+
+  <article data-panel="phone" class="p-phone">
+    <p class="k">CONTACT · 联系我</p>
+    <h2>一起做点<br>有意思的东西。</h2>
+    <a class="mail" href="mailto:2370318075@qq.com">2370318075@qq.com</a>
+    <p class="muted">求职方向：AI 产品经理 · 2027 届</p>
+  </article>
+
+  <article data-panel="camera" class="p-camera">
+    <div class="photos"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="side">
+      <p class="k">VISUAL · 摄影与内容</p>
+      <h2>2.6 万</h2>
+      <p class="role">抖音累计粉丝</p>
+      <p>大三在学校众创空间组建摄影创业团队并担任负责人；持续运营抖音、小红书，具备拍摄、视觉策划与传播增长经验。</p>
+      <p class="muted">（左侧替换为你的摄影作品）</p>
+    </div>
+  </article>
+</section>
+
+<script type="module" src="main.js?v=43"></script>
+</body>
+</html>

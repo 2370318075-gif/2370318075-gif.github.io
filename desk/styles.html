@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>书桌 · 风格选择</title>
+<style>
+  *{margin:0;box-sizing:border-box}
+  body{background:#100D0B;color:#EDE6DA;font:15px/1.6 -apple-system,"PingFang SC",sans-serif;padding:48px 40px 80px}
+  h1{font-size:22px;font-weight:600;letter-spacing:-.01em}
+  .sub{color:#9A9186;font-size:13px;margin:8px 0 36px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:1400px}
+  .card{background:#1A1613;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07)}
+  .card img{display:block;width:100%;cursor:zoom-in;transition:opacity .2s}
+  .card img:hover{opacity:.85}
+  .meta{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+  .meta b{font-size:15px}
+  .meta span{color:#9A9186;font-size:12px}
+  .meta a{color:#E2572B;text-decoration:none;font-size:13px;border:1px solid rgba(226,87,43,.4);padding:5px 14px;border-radius:999px;transition:background .15s,color .15s}
+  .meta a:hover{background:#E2572B;color:#fff}
+  .zoom{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;place-items:center;z-index:9;cursor:zoom-out}
+  .zoom.on{display:grid}
+  .zoom img{max-width:96vw;max-height:92vh;border-radius:8px}
+  .zoom p{position:fixed;bottom:26px;left:0;right:0;text-align:center;color:#9A9186;font-size:13px}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}body{padding:32px 18px 60px}}
+</style>
+</head>
+<body>
+<h1>书桌 · 风格选择</h1>
+<p class="sub">四种风格的实际渲染效果（同一场景、同一批模型，只换了灯光、色调和后期）。点图放大，点"试玩"进入对应版本的交互页。</p>
+<div class="grid">
+  <figure class="card"><img src="shots/resident.png" alt="生化危机风"><figcaption class="meta"><div><b>生化危机风</b><br><span>惨绿荧光 · 低照度 · 实验室/安全屋感</span></div><a href="index.html?style=resident">试玩 →</a></figcaption></figure>
+  <figure class="card"><img src="shots/metro.png" alt="地铁逃生风"><figcaption class="meta"><div><b>地铁逃生风</b><br><span>暖钨丝灯 · 冷峻环境 · 军规工作台感</span></div><a href="index.html?style=metro">试玩 →</a></figcaption></figure>
+  <figure class="card"><img src="shots/cyber.png" alt="赛博风"><figcaption class="meta"><div><b>赛博风</b><br><span>品红 × 青霓虹 · 强辉光 · 夜市氛围</span></div><a href="index.html?style=cyber">试玩 →</a></figcaption></figure>
+  <figure class="card"><img src="shots/pixel.png" alt="像素风"><figcaption class="meta"><div><b>像素风</b><br><span>低分辨率渲染 · 复古街机感</span></div><a href="index.html?style=pixel">试玩 →</a></figcaption></figure>
+</div>
+<div class="zoom" id="zoom"><img id="zoomimg"><p>点击任意处关闭</p></div>
+<script>
+  const z = document.getElementById('zoom'), zi = document.getElementById('zoomimg');
+  document.querySelectorAll('.card img').forEach(i => i.onclick = () => { zi.src = i.src; z.classList.add('on'); });
+  z.onclick = () => z.classList.remove('on');
+  addEventListener('keydown', e => { if (e.key === 'Escape') z.classList.remove('on'); });
+</script>
+</body>
+</html>
