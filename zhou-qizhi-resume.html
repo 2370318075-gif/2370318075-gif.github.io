@@ -34,15 +34,15 @@
     .date { white-space: nowrap; font-weight: 700; }
     .item { margin: 0 0 2.1mm 5mm; font-size: 8.75pt; line-height: 1.51; text-align: justify; }
     .result-title { margin: 2.2mm 0 2mm; font-size: 9pt; font-weight: 700; }
-    .page2 .section { margin-top: 1.5mm; }
-    .page2 .item { font-size: 8.9pt; line-height: 1.55; margin-bottom: 2.2mm; }
+    .page2 .section { margin-top: 0.8mm; margin-bottom: 2.4mm; }
+    .page2 .item { font-size: 8.9pt; line-height: 1.45; margin-bottom: 1.7mm; }
     .note { margin: 5mm 5mm 0; padding: 3.5mm 4mm; background: #f7f7f7; font-size: 8.8pt; line-height: 1.55; }
-    .project { margin-bottom: 4.5mm; }
+    .project { margin-bottom: 3.4mm; }
     .project-head { margin-bottom: 2mm; font-size: 10.5pt; }
     .project-title { font-size: 8.8pt; font-weight: 500; margin-left: 2mm; }
-    .project-intro { margin: 0 0 2mm; font-size: 8.9pt; line-height: 1.5; text-align: justify; }
+    .project-intro { margin: 0 0 1.7mm; font-size: 8.9pt; line-height: 1.45; text-align: justify; }
     .project .item { margin-bottom: 2mm; font-size: 8.8pt; line-height: 1.52; }
-    .education { margin: 0 0 2.5mm; font-size: 9.2pt; line-height: 1.6; }
+    .education { margin: 0 0 1.5mm; font-size: 9.2pt; line-height: 1.4; }
   </style>
 </head>
 <body>
@@ -104,7 +104,7 @@
     <article class="project">
       <div class="project-head"><div><b>服务器运维助手 Server Ops Copilot · 智能运维平台</b><span class="project-title">产品负责人</span></div><div class="date">2026.10 — 至今</div></div>
       <p class="project-intro">面向企业私有化环境的智能运维副驾：把"发现 → 定位 → 决策 → 修复 → 沉淀"的运维闭环交给 AI 跑通，把"是否动手"的决策权始终留给运维人员。</p>
-      <p class="item"><b>核心链路设计：</b>定义五环闭环——告警接入后去重归并成事件；AI 结合 SOP 知识库产出根因假设、置信度与动作清单（LLM 不可用时规则引擎兜底）；分级审批（高风险 L1+L2、动作可二次编辑、授权幂等防重复执行）；Agent / SSH 双通道执行白名单动作（服务端只传动作 key 不下发任意命令），执行后自动复采评估"执行成功≠修复成功"；复盘蒸馏回知识库供下次诊断引用，形成"越用越准"的闭环。</p>
+      <p class="item"><b>核心链路设计：</b>定义五环闭环——告警归并成事件；AI 结合 SOP 知识库产出根因假设、置信度与动作清单（LLM 不可用时规则引擎兜底）；分级审批（高风险 L1+L2、动作可编辑、授权幂等防重）；Agent / SSH 双通道执行白名单动作（只传动作 key 不下发任意命令），执行后自动复采评估"执行成功≠修复成功"；复盘蒸馏回知识库供下次引用，形成越用越准的闭环。</p>
       <p class="item"><b>产品化决策与交付：</b>独立完成需求评审版 PRD 与工作流设计；围绕"私有化、可审计、能降级"做取舍：变更操作 100% 授权、可回滚、可审计、全程留痕；接入飞书审批贴合办公流程，按"先跑通再补全"跑通"节点接入 → 数据上报 → 资产看板"端到端验证，5 台真实云主机走完纳管到修复全链路。</p>
     </article>
     <article class="project">
@@ -115,7 +115,7 @@
     </article>
     <div class="section"><span class="mark"></span><h2>教育背景与荣誉</h2><span class="line"></span></div>
     <p class="education"><b>2023 — 2027　河北科技师范学院</b>　数字媒体技术 · 本科（2027 届）</p>
-    <p class="education">大三在学校众创空间组建摄影创业团队并担任负责人 · 全国大学生红色全景资源创意展示大赛全国二等奖 · 大学生创新创业训练计划省级创业项目奖</p>
+    <p class="education">大三组建摄影创业团队并担任负责人 · 全国大学生红色全景资源创意展示大赛全国二等奖 · 大创计划省级创业项目奖</p>
     <div class="footer"><span>周琦致 · AI 产品经理</span><span>2 / 2</span></div>
   </section>
 </body>
