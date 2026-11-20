@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #242424; font-family: "PingFang SC", "Hiragino Sans GB", Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { position: relative; width: 210mm; height: 297mm; padding: 17mm 18mm 18mm; page-break-after: always; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+    .topline { height: 1px; background: #1d1d1d; margin: -4mm 0 7mm; }
+    .footer { position: absolute; left: 18mm; right: 18mm; bottom: 8.5mm; border-top: 1px solid #d9d9d9; padding-top: 2.5mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: #555; }
+    .name { margin: 0; font-size: 28pt; font-weight: 700; line-height: 1; letter-spacing: .5px; }
+    .role { margin-top: 4mm; font-size: 12pt; font-weight: 600; }
+    .info { margin-top: 4.5mm; font-size: 10.2pt; font-weight: 500; }
+    .contact { margin-top: 3.5mm; font-size: 10.2pt; font-weight: 500; }
+    .photo { position: absolute; right: 24mm; top: 25mm; width: 34mm; height: 45mm; object-fit: cover; object-position: 50% 12%; background: #e6eaf0; }
+    .tags { display: flex; gap: 2mm; margin-top: 4mm; max-width: 130mm; flex-wrap: wrap; }
+    .tag { background: #f2f3f4; padding: 1.8mm 4.1mm; min-width: 18mm; text-align: center; font-size: 7.7pt; white-space: nowrap; }
+    .section { display: flex; align-items: center; gap: 3.2mm; margin: 6mm 0 3.1mm; }
+    .section .mark { width: 3.8mm; height: 7.6mm; border-radius: .8mm; background: #1d1d1d; }
+    .section h2 { margin: 0; font-size: 17pt; letter-spacing: .5px; white-space: nowrap; }
+    .section .line { flex: 1; height: 1px; background: #d9d9d9; }
+    .advantage { display: grid; grid-template-columns: 5mm 1fr; column-gap: 0; margin: 0 0 2.1mm; font-size: 9.15pt; line-height: 1.52; }
+    .dot { color: #b9b9b9; font-size: 13pt; line-height: 1.35; }
+    .page1 .advantage { margin-bottom: 1.4mm; line-height: 1.42; }
+    .page1 .section { margin: 4mm 0 2.2mm; }
+    .page1 .item { margin-bottom: 1.1mm; line-height: 1.38; }
+    .page1 .job-head { margin-bottom: 1.5mm; }
+    .job { margin-bottom: 4mm; }
+    .page1 .job { margin-bottom: 2mm; }
+    .job-head, .project-head { display: grid; grid-template-columns: 1fr auto; gap: 6mm; align-items: baseline; margin-bottom: 2.3mm; font-size: 10.3pt; line-height: 1.25; }
+    .job-title { font-size: 8.8pt; font-weight: 500; margin-left: 2mm; }
+    .date { white-space: nowrap; font-weight: 700; }
+    .item { margin: 0 0 2.1mm 5mm; font-size: 8.75pt; line-height: 1.51; text-align: justify; }
+    .result-title { margin: 2.2mm 0 2mm; font-size: 9pt; font-weight: 700; }
+    .page2 .section { margin-top: 1.5mm; }
+    .page2 .item { font-size: 8.9pt; line-height: 1.55; margin-bottom: 2.2mm; }
+    .note { margin: 5mm 5mm 0; padding: 3.5mm 4mm; background: #f7f7f7; font-size: 8.8pt; line-height: 1.55; }
+    .project { margin-bottom: 4.5mm; }
+    .project-head { margin-bottom: 2mm; font-size: 10.5pt; }
+    .project-title { font-size: 8.8pt; font-weight: 500; margin-left: 2mm; }
+    .project-intro { margin: 0 0 2mm; font-size: 8.9pt; line-height: 1.5; text-align: justify; }
+    .project .item { margin-bottom: 2mm; font-size: 8.8pt; line-height: 1.52; }
+    .education { margin: 0 0 2.5mm; font-size: 9.2pt; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <section class="page page1">
+    <div class="topline"></div>
+    <img class="photo" src="source_headshot.png" alt="周琦致证件照" />
+    <h1 class="name">周琦致</h1>
+    <div class="role">AI 产品经理</div>
+    <div class="info">21 岁｜2027 届数字媒体技术本科生</div>
+    <div class="contact">17835783578　·　2370318075@qq.com</div>
+    <div class="tags"><span class="tag">产品规划</span><span class="tag">用户研究</span><span class="tag">需求分析</span><span class="tag">PRD 撰写</span><span class="tag">原型设计</span><span class="tag">数据分析</span><span class="tag">摄影与视觉表现</span></div>
+
+    <div class="section"><span class="mark"></span><h2>个人优势</h2><span class="line"></span></div>
+    <div class="advantage"><span class="dot">●</span><span><b>产品设计与快速验证：</b>擅长把产品想法快速落地为可验证的原型（含 AI/Agent 类产品），围绕真实使用场景持续评测、调优与迭代，用最小成本验证产品假设。</span></div>
+    <div class="advantage"><span class="dot">●</span><span><b>AI 产品的需求判断：</b>了解大语言模型的能力边界，能判断哪些需求适合交给 AI、如何拆成可交付的产品功能；主导智能问答产品的方案设计与落地，沉淀多模型选型评测方法。</span></div>
+    <div class="advantage"><span class="dot">●</span><span><b>产品文档与原型表达：</b>具备 MRD、BRD、PRD、竞品分析、用户研究、体验报告与上线文档的完整写作经验，能围绕用户痛点完成需求分析、信息架构与交互原型设计。</span></div>
+    <div class="advantage"><span class="dot">●</span><span><b>跨领域整合与视觉内容能力：</b>兼具数字媒体、摄影、新媒体运营与产品策划经验，日常工作流中持续使用 AI 工具提效；持续运营抖音、小红书，抖音累计粉丝 2.6 万。</span></div>
+    <div class="advantage"><span class="dot">●</span><span><b>数据与用户反馈驱动：</b>结合内容数据、用户反馈与实际使用场景持续复盘，优化内容形式、产品方案与迭代优先级。</span></div>
+
+    <div class="section"><span class="mark"></span><h2>工作经历</h2><span class="line"></span></div>
+    <article class="job">
+      <div class="job-head"><div><b>我们影像 · AI 创作与流程优化</b><span class="job-title">AI 产品经理</span></div><div class="date">2026.02 — 2026.05</div></div>
+      <p class="item">1. <b>AI 工具落地：</b>调研、测试并引入 AI 修图、智能选片、视频快剪、文案生成及素材管理工具，结合写真与婚礼业务完成工具选型、效果验证与实际应用。</p>
+      <p class="item">2. <b>业务流程优化：</b>梳理客户咨询、拍摄策划、现场执行、后期修图到成片交付全流程，识别重复操作与沟通断点，通过标准化工作流提升团队协作和交付效率。</p>
+      <p class="item">3. <b>写真与婚礼业务支持：</b>辅助生成拍摄主题、造型参考、场景灵感与情绪板；整理照片、视频素材并筛选关键片段，制作快剪初稿、字幕及内容策划。</p>
+      <p class="item">4. <b>AI 创意服务与规范建设：</b>设计 AI 预览图、创意短片、定制海报等增值服务；沉淀提示词、操作手册与模板并培训团队，同时把控客户隐私、肖像权及素材版权风险。</p>
+      <p class="item"><b>项目成果：</b>从零完成并公开部署 AI 影像创作产品（MUYU），打通原片上传、滤镜/特效编辑、模型生成、原片对比、下载保存与历史归档的完整创作流程；将原本依赖手动修图、反复调试提示词和多工具切换的流程，收敛为“1 次上传、4 步核心操作”，典型创作耗时由约 15 分钟缩短至 5 分钟，效率提升约 67%。</p>
+    </article>
+    <article class="job">
+      <div class="job-head"><div><b>火星超频 Nyro · 国际 AI 艺人厂牌与音乐平台</b><span class="job-title">AI 产品经理</span></div><div class="date">2026.07 — 2026.11</div></div>
+      <p class="item">1. <b>产品规划与需求文档：</b>负责 StreamReady（Nyro Bot）AI 音频工作台的产品规划与 PRD，定义从音频上传、自动母带、Chat 指令修改、分轨导出到平台响度预览的完整创作流程，让非专业用户用自然语言完成混音调整。</p>
+      <p class="item">2. <b>AI 能力产品化：</b>推动"自然语言改混音"与"云端四轨分离"两项核心能力落地；坚持处理进度、参数与结果反馈均对应真实处理过程，将模型与服务端约束转化为产品规则、状态反馈与兜底提示，管理用户预期。</p>
+      <p class="item">3. <b>商业化与上线：</b>参与账号体系、额度计量与导出计费规则设计，明确免费额度与付费墙边界；跟进部署上线、域名接入与回滚预案，支撑 stream-ready.com 正式运营。</p>
+      <p class="item">4. <b>厂牌业务支持：</b>参与 Nyro 国际 AI 艺人矩阵厂牌与数字版权微分授权平台的产品设计，梳理艺人展示、音乐版权与授权确认流程。</p>
+      <p class="item">5. <b>内部工具与内容制作：</b>自研降本增效工具 Streamcheck（模拟 Spotify 压缩音质预览母带听感）、SIQA（艺人情报查询工作台）；独立完成 Stream Ready 宣传片录屏与剪辑。</p>
+      <p class="item">6. <b>增长调研与情报支持：</b>调研各平台音乐人付费推流政策与涨粉打法，为 AI 艺人矩阵评估推广渠道；收集行业与平台情报支撑决策。</p>
+    </article>
+    <div class="footer"><span>周琦致 · AI 产品经理</span><span>1 / 2</span></div>
+  </section>
+
+  <section class="page page2">
+    <div class="topline"></div>
+    <div class="section"><span class="mark"></span><h2>项目经历</h2><span class="line"></span></div>
+    <article class="project">
+      <div class="project-head"><div><b>Stream Ready · AI 音频工作台</b><span class="project-title">产品负责人 · 火星超频 Nyro</span></div><div class="date">2026.07 — 2026.11</div></div>
+      <p class="project-intro">浏览器端 AI 母带工作台：非专业音乐人用自然语言完成混音精修与母带处理——上传即得自动母带，用聊天与旋钮继续打磨，导出可直接发行的文件，支撑 stream-ready.com 正式运营。</p>
+      <p class="item"><b>核心链路设计：</b>定义"上传 → 自动母带（冻结 V1）→ Chat 对话精修 → EQ/宏旋钮微调 → 四轨分离 → 平台响度预览 → 导出/发行打包"的完整工作流；上传后自动生成保守可复现的母带起点，并用"源诊断卡"逐条解释这条混音需要什么处理，让自动结果可理解、可接管。</p>
+      <p class="item"><b>对话式编辑的信任设计：</b>把 AI 能力圈在 15 个白名单工具内、越界请求拒绝而非猜测；每轮编辑须提交"意图计划"并强制校验"不要压缩/不要加宽"等否定约束；每次编辑沉淀为可恢复的版本账本，Chat 层与独立工具层双层历史互不干扰。</p>
+      <p class="item"><b>关键取舍——确定性优先：</b>能靠规则算准的指令（分离、增益、EQ、响度）本地直连不经过大模型，避免模型波动拖垮核心链路；仅含审美判断的复合指令交回模型，主模型超时自动切兜底模型而非整轮失败。</p>
+      <p class="item"><b>体验准则"监听 = 交付"：</b>实时试听与导出渲染共用同一处理器，"听到的就是导出的"；提交、撤销、切轨全程不停播；"音频不出本机、仅文字与数值测量离开浏览器"的隐私承诺直接写进产品界面。</p>
+      <p class="item"><b>商业化与成果：</b>明确免费额度与付费墙边界，参与导出计费规则设计并接入 Stripe；主导 v1–v50 高频迭代、每版可回滚，完成从 PRD 到上线运营的 0→1 闭环。</p>
+    </article>
+    <article class="project">
+      <div class="project-head"><div><b>Pocket Agent · 手机语音智能体</b><span class="project-title">产品负责人 · 个人项目</span></div><div class="date">2026.10 — 至今</div></div>
+      <p class="project-intro">面向个人手机的"说一句话就帮你操作"的 AI 助手：唤醒"贾维斯"后用自然语言完成外卖下单至结算页、路线导航、搜索购物等跨 App 操作，所有不可逆动作都保留人的确认权。</p>
+      <p class="item"><b>语音交互与意图分发：</b>围绕"说人话就能用手机"定义交互：一句唤醒词进入对话，自动区分系统指令、知识提问、点名 App 直达与开放式任务四类意图并走各自最快路径；用拟人化克隆音色播报进度，弱化机器感。</p>
+      <p class="item"><b>任务执行与信任设计：</b>用"直达入口 + 逐步确认"平衡效率与安全，支付、删除等不可逆操作一律交还用户确认；Galaxy S25 Ultra 真机跑通单/复合任务全链路，建立 8 任务回归矩阵，以"任务是否真正完成"为验收标准并保留全程操作留痕。</p>
+    </article>
+    <article class="project">
+      <div class="project-head"><div><b>服务器运维助手 Server Ops Copilot · 智能运维平台</b><span class="project-title">产品负责人</span></div><div class="date">2026.10 — 至今</div></div>
+      <p class="project-intro">面向企业私有化环境的智能运维助手：把"发现 → 定位 → 决策 → 修复 → 沉淀"的运维闭环交给 AI 跑通，把"是否动手"的决策权始终留给运维人员。</p>
+      <p class="item"><b>全链路产品设计：</b>独立完成需求评审版 PRD 与工作流设计，覆盖告警接入与降噪、AI 诊断建议、人工授权执行、自动复盘与经验沉淀；变更类操作 100% 授权、可回滚、可审计。</p>
+      <p class="item"><b>产品化决策与交付：</b>围绕"私有化、可审计、能降级"做取舍：操作全程留痕、AI 不可用时降级为规则库建议而非直接失败；接入飞书审批贴合办公流程，按"先跑通再补全"从 0 到 1 跑通"节点接入 → 数据上报 → 资产看板"端到端验证。</p>
+    </article>
+    <article class="project">
+      <div class="project-head"><div><b>先声 PreVoice · AI 产品经理辅导助手</b><span class="project-title">产品负责人 · 个人项目</span></div><div class="date">2026.10 — 至今</div></div>
+      <p class="project-intro">面向早期产品决策的多 Agent 合成调研平台：在真人调研之前，让虚拟调研团队把产品概念先跑一遍——概念测试、文案 A/B、PSM 定价、MaxDiff 优先级、焦点小组——半小时产出带可信度标签和真人验证清单的报告，明确"哪些结论可信、哪些必须去问真人"。</p>
+      <p class="item"><b>研究链路设计：</b>自然语言一句话发起研究，主管规划派单，主持人 / 分析师 / 受访者 Agent 协作执行；受访者按中国分层人群画像生成独立作答，主持人自动追问，全程事件可审计回溯；跑通"一句话发起 → 报告 → 真人验证清单"全链路，6 人概念测试约 17 秒、成本约 ¥0.5。</p>
+      <p class="item"><b>可信度与边界设计：</b>真实数据只进评分不进生成，统计检验定三级可信度标签、小样本强制降档"未校准"；受访者私有记忆不共享（消融实验实测共享会让样本趋同）；偏差结论自动生成真人验证清单，产品原则写明"合成调研不替代真人"。</p>
+    </article>
+    <div class="section"><span class="mark"></span><h2>教育背景与荣誉</h2><span class="line"></span></div>
+    <p class="education"><b>2023 — 2027　河北科技师范学院</b>　数字媒体技术 · 本科（2027 届）</p>
+    <p class="education">大三在学校众创空间组建摄影创业团队并担任负责人 · 全国大学生红色全景资源创意展示大赛全国二等奖 · 大学生创新创业训练计划省级创业项目奖</p>
+    <div class="footer"><span>周琦致 · AI 产品经理</span><span>2 / 2</span></div>
+  </section>
+</body>
+</html>
