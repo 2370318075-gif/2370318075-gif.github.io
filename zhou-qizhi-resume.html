@@ -34,21 +34,26 @@
     .date { white-space: nowrap; font-weight: 700; }
     .item { margin: 0 0 2.1mm 5mm; font-size: 8.75pt; line-height: 1.51; text-align: justify; }
     .result-title { margin: 2.2mm 0 2mm; font-size: 9pt; font-weight: 700; }
-    .page2 .section { margin-top: 0.8mm; margin-bottom: 2.4mm; }
-    .page2 .item { font-size: 8.9pt; line-height: 1.45; margin-bottom: 1.7mm; }
     .note { margin: 5mm 5mm 0; padding: 3.5mm 4mm; background: #f7f7f7; font-size: 8.8pt; line-height: 1.55; }
-    .project { margin-bottom: 3.4mm; }
+    .project { margin-bottom: 3.6mm; }
     .project-head { margin-bottom: 2mm; font-size: 10.5pt; }
     .project-title { font-size: 8.8pt; font-weight: 500; margin-left: 2mm; }
-    .project-intro { margin: 0 0 1.7mm; font-size: 8.9pt; line-height: 1.45; text-align: justify; }
-    .project .item { margin-bottom: 2mm; font-size: 8.8pt; line-height: 1.52; }
+    .project-intro { margin: 0 0 2mm; font-size: 8.9pt; line-height: 1.5; text-align: justify; }
+    .project .item { margin-bottom: 2mm; font-size: 8.8pt; line-height: 1.54; }
     .education { margin: 0 0 1.5mm; font-size: 9.2pt; line-height: 1.4; }
+    .kw { color: #1d1d1d; font-weight: 600; }
+    .page3 .project { margin-bottom: 9mm; }
+    .page3 .project-head { margin-bottom: 2.8mm; }
+    .page3 .project-intro { font-size: 9.2pt; line-height: 1.65; margin-bottom: 2.6mm; }
+    .page3 .item { font-size: 9pt; line-height: 1.72; margin-bottom: 2.6mm; }
+    .page3 .section { margin: 7mm 0 4mm; }
+    .page3 .education { font-size: 9.5pt; line-height: 1.6; margin-bottom: 2mm; }
   </style>
 </head>
 <body>
   <section class="page page1">
     <div class="topline"></div>
-    <img class="photo" src="source_headshot.png" alt="周琦致证件照" />
+    <img class="photo" src="source_headshot.jpg" alt="周琦致证件照" />
     <h1 class="name">周琦致</h1>
     <div class="role">AI 产品经理</div>
     <div class="info">21 岁｜2027 届数字媒体技术本科生</div>
@@ -64,14 +69,6 @@
 
     <div class="section"><span class="mark"></span><h2>工作经历</h2><span class="line"></span></div>
     <article class="job">
-      <div class="job-head"><div><b>我们影像 · AI 创作与流程优化</b><span class="job-title">AI 产品经理</span></div><div class="date">2026.02 — 2026.05</div></div>
-      <p class="item">1. <b>AI 工具落地：</b>调研、测试并引入 AI 修图、智能选片、视频快剪、文案生成及素材管理工具，结合写真与婚礼业务完成工具选型、效果验证与实际应用。</p>
-      <p class="item">2. <b>业务流程优化：</b>梳理客户咨询、拍摄策划、现场执行、后期修图到成片交付全流程，识别重复操作与沟通断点，通过标准化工作流提升团队协作和交付效率。</p>
-      <p class="item">3. <b>写真与婚礼业务支持：</b>辅助生成拍摄主题、造型参考、场景灵感与情绪板；整理照片、视频素材并筛选关键片段，制作快剪初稿、字幕及内容策划。</p>
-      <p class="item">4. <b>AI 创意服务与规范建设：</b>设计 AI 预览图、创意短片、定制海报等增值服务；沉淀提示词、操作手册与模板并培训团队，同时把控客户隐私、肖像权及素材版权风险。</p>
-      <p class="item"><b>项目成果：</b>从零完成并公开部署 AI 影像创作产品（MUYU），打通原片上传、滤镜/特效编辑、模型生成、原片对比、下载保存与历史归档的完整创作流程；将原本依赖手动修图、反复调试提示词和多工具切换的流程，收敛为“1 次上传、4 步核心操作”，典型创作耗时由约 15 分钟缩短至 5 分钟，效率提升约 67%。</p>
-    </article>
-    <article class="job">
       <div class="job-head"><div><b>火星超频 Nyro · 国际 AI 艺人厂牌与音乐平台</b><span class="job-title">AI 产品经理</span></div><div class="date">2026.07 — 2026.11</div></div>
       <p class="item">1. <b>产品规划与需求文档：</b>负责 StreamReady（Nyro Bot）AI 音频工作台的产品规划与 PRD，定义从音频上传、自动母带、Chat 指令修改、分轨导出到平台响度预览的完整创作流程，让非专业用户用自然语言完成混音调整。</p>
       <p class="item">2. <b>AI 能力产品化：</b>推动"自然语言改混音"与"云端四轨分离"两项核心能力落地；坚持处理进度、参数与结果反馈均对应真实处理过程，将模型与服务端约束转化为产品规则、状态反馈与兜底提示，管理用户预期。</p>
@@ -80,43 +77,62 @@
       <p class="item">5. <b>内部工具与内容制作：</b>自研降本增效工具 Streamcheck（模拟 Spotify 压缩音质预览母带听感）、SIQA（艺人情报查询工作台）；独立完成 Stream Ready 宣传片录屏与剪辑。</p>
       <p class="item">6. <b>增长调研与情报支持：</b>调研各平台音乐人付费推流政策与涨粉打法，为 AI 艺人矩阵评估推广渠道；收集行业与平台情报支撑决策。</p>
     </article>
-    <div class="footer"><span>周琦致 · AI 产品经理</span><span>1 / 2</span></div>
+    <article class="job">
+      <div class="job-head"><div><b>我们影像 · AI 创作与流程优化</b><span class="job-title">AI 产品经理</span></div><div class="date">2026.02 — 2026.05</div></div>
+      <p class="item">1. <b>AI 工具落地：</b>调研、测试并引入 AI 修图、智能选片、视频快剪、文案生成及素材管理工具，结合写真与婚礼业务完成工具选型、效果验证与实际应用。</p>
+      <p class="item">2. <b>业务流程优化：</b>梳理客户咨询、拍摄策划、现场执行、后期修图到成片交付全流程，识别重复操作与沟通断点，通过标准化工作流提升团队协作和交付效率。</p>
+      <p class="item">3. <b>写真与婚礼业务支持：</b>辅助生成拍摄主题、造型参考、场景灵感与情绪板；整理照片、视频素材并筛选关键片段，制作快剪初稿、字幕及内容策划。</p>
+      <p class="item">4. <b>AI 创意服务与规范建设：</b>设计 AI 预览图、创意短片、定制海报等增值服务；沉淀提示词、操作手册与模板并培训团队，同时把控客户隐私、肖像权及素材版权风险。</p>
+      <p class="item"><b>项目成果：</b>从零完成并公开部署 AI 影像创作产品（MUYU），打通原片上传、滤镜/特效编辑、模型生成、原片对比、下载保存与历史归档的完整创作流程；将原本依赖手动修图、反复调试提示词和多工具切换的流程，收敛为“1 次上传、4 步核心操作”，典型创作耗时由约 15 分钟缩短至 5 分钟，效率提升约 67%。</p>
+    </article>
+    <div class="footer"><span>周琦致 · AI 产品经理</span><span>1 / 3</span></div>
   </section>
 
   <section class="page page2">
     <div class="topline"></div>
     <div class="section"><span class="mark"></span><h2>项目经历</h2><span class="line"></span></div>
     <article class="project">
-      <div class="project-head"><div><b>Stream Ready · AI 音频工作台</b><span class="project-title">产品负责人 · 火星超频 Nyro</span></div><div class="date">2026.07 — 2026.11</div></div>
-      <p class="project-intro">浏览器端 AI 母带工作台：非专业音乐人用自然语言完成混音精修与母带处理——上传即得自动母带，用聊天与旋钮继续打磨，导出可直接发行的文件，支撑 stream-ready.com 正式运营。</p>
-      <p class="item"><b>核心链路设计：</b>定义"上传 → 自动母带（冻结 V1）→ Chat 对话精修 → EQ/宏旋钮微调 → 四轨分离 → 平台响度预览 → 导出/发行打包"的完整工作流；上传后自动生成保守可复现的母带起点，并用"源诊断卡"逐条解释这条混音需要什么处理，让自动结果可理解、可接管。</p>
-      <p class="item"><b>对话式编辑的信任设计：</b>把 AI 能力圈在 15 个白名单工具内、越界请求拒绝而非猜测；每轮编辑须提交"意图计划"并强制校验"不要压缩/不要加宽"等否定约束；每次编辑沉淀为可恢复的版本账本，Chat 层与独立工具层双层历史互不干扰。</p>
-      <p class="item"><b>关键取舍——确定性优先：</b>能靠规则算准的指令（分离、增益、EQ、响度）本地直连不经过大模型，避免模型波动拖垮核心链路；仅含审美判断的复合指令交回模型，主模型超时自动切兜底模型而非整轮失败。</p>
-      <p class="item"><b>体验准则"监听 = 交付"：</b>实时试听与导出渲染共用同一处理器，"听到的就是导出的"；提交、撤销、切轨全程不停播；"音频不出本机、仅文字与数值测量离开浏览器"的隐私承诺直接写进产品界面。</p>
-      <p class="item"><b>商业化与成果：</b>明确免费额度与付费墙边界，参与导出计费规则设计并接入 Stripe；主导 v1–v50 高频迭代、每版可回滚，完成从 PRD 到上线运营的 0→1 闭环。</p>
+      <div class="project-head"><div><b>Stream Ready · 浏览器端 AI 母带工作台</b><span class="project-title">产品负责人 · 火星超频 Nyro</span></div><div class="date">2026.07 — 2026.11</div></div>
+      <p class="project-intro">面向非专业音乐人的 AI 母带工作站：上传成品混音即得自动母带，再用自然语言对话或旋钮精修，导出可直接发行的文件；DSP 全部在浏览器/本机执行，"音频不出本机"是写进界面的产品承诺——支撑 stream-ready.com 正式运营并接入 Stripe 计费。</p>
+      <p class="item"><b>1. 核心链路设计：</b>上传 → 自动母带（冻结 V1）→ 源诊断卡 → Chat 对话精修 → EQ/宏旋钮微调 → 四轨分离 → 平台响度预览 → 导出/发行打包。上传后由"测量 → 自适应计划"生成保守可复现的母带起点，"源诊断卡"逐条解释这条混音需要什么处理（低频过量/中频浑浊/高频刺耳等），让自动结果可理解、可接管。</p>
+      <p class="item"><b>2. Chat 改混音的完整链路：</b>用户一句自然语言 → 服务端规划路由携带指令与当前母带状态发给模型 → 模型返回严格 JSON 工具调用（apply_mix_patch 信封）→ 客户端校验参数并翻译成确定的 DSP patch → 就地换母带、播放不中断。每轮发给模型的只有文字与数值：指令、Integrated LUFS / True Peak / 动态范围 / 频段诊断、版本账本与近 20 轮对话摘要——音频波形永不离开本机。</p>
+      <p class="item"><b>3. 模型接入与降级策略：</b>经 aiHubMix 网关聚合多模型，主用 gemini-3.8-flash、规划超时或不可用自动切换 deepseek-v4.1-flash 兜底；服务端单次规划预算 18s 按模型循环重试，客户端 20s 看门狗 + 40s 硬预算，失败按超时/限流/模型不可用分类透出可读提示，而非整轮卡死。</p>
+      <p class="item"><b>4. AI 边界与信任设计：</b>模型能力圈在 <span class="kw">15 个白名单工具</span>内（改混音/读状态/分段分析/版本恢复/历史查询等），越界请求拒绝而非猜测；每轮编辑强制提交"意图计划"并校验六类否定约束（不要压缩/不要加宽/保留音色…），违反即拒绝并说明原因；每次成功编辑沉淀为版本账本（Chat V1/V2… 可任意恢复），与旋钮层的 3 步撤销相互独立。</p>
+      <p class="item"><b>5. 关键取舍——确定性优先的双通道：</b>能靠规则算准的指令（分离/增益/带 Q 的 EQ/LUFS/宽度/Warm Tape/版本恢复）走<span class="kw">确定性正则直连、零模型调用</span>，不受模型波动影响；含审美判断的复合指令才交回模型——核心链路永不被上游 503 拖垮。</p>
+      <p class="item"><b>6. 自研 DSP 工具体系（监听 = 交付）：</b>Master EQ 六旋钮（输入/响度/输出增益 + 低中高三段）+ 宏旋钮 Color（6 kHz 搁架 × 磁带饱和）、Air+MidAir（自研动态空气段，包络跟随做程序相关抑制，50 档逐位直通）、Calm（8 带动态共振抑制，只削高出邻域包络的凸起）。实时试听与离线导出共用同一 AudioWorklet 处理器——"听到的就是导出的"；测量按 BS.1770-5 K-weighting 标准；导出 WAV/MP3/FLAC 全部浏览器本地编码（24/32-bit + TPDF 抖动），音频不上传。</p>
+      <p class="item"><b>7. 四轨分离双路由：</b>人声/贝斯/鼓/其它（htdemucs v4）。云端走自建 RunPod Serverless GPU 端点（RTX 4090；R2 分片上传 8 MiB 逐片 sha256 校验 + 断点续传；仅在提交任务时才唤醒 GPU 冷启动控成本；音频对象 30 分钟 TTL 自动清理）；本地走 Apple Silicon 引擎（一次性配对密钥 + 协议握手 + Origin 白名单），音频不出本机、零云端费用；"本地"关键词由确定性路由识别，不经过模型。</p>
+      <p class="item"><b>8. 商业化与交付：</b>设计免费额度与付费墙边界、额度计量与导出计费规则并接入 Stripe；主导 v1–v50 高频迭代、每版可回滚，完成从 PRD 到上线运营的 0→1 闭环。</p>
     </article>
     <article class="project">
-      <div class="project-head"><div><b>Pocket Agent · 手机语音智能体</b><span class="project-title">产品负责人 · 个人项目</span></div><div class="date">2026.10 — 至今</div></div>
-      <p class="project-intro">面向个人手机的"说一句话就帮你操作"的 AI 助手：唤醒"贾维斯"后用自然语言完成外卖下单至结算页、路线导航、搜索购物等跨 App 操作，所有不可逆动作都保留人的确认权。</p>
-      <p class="item"><b>语音交互与意图分发：</b>围绕"说人话就能用手机"定义交互：一句唤醒词进入对话，自动区分系统指令、知识提问、点名 App 直达与开放式任务四类意图并走各自最快路径；用拟人化克隆音色播报进度，弱化机器感。</p>
-      <p class="item"><b>任务执行与信任设计：</b>用"直达入口 + 逐步确认"平衡效率与安全，支付、删除等不可逆操作一律交还用户确认；Galaxy S25 Ultra 真机跑通单/复合任务全链路，建立 8 任务回归矩阵，以"任务是否真正完成"为验收标准并保留全程操作留痕。</p>
+      <div class="project-head"><div><b>Pocket Agent · 手机语音智能体</b><span class="project-title">产品负责人</span></div><div class="date">2026.10 — 至今</div></div>
+      <p class="project-intro">面向个人手机的"说一句话就帮你操作"的 AI 助手：唤醒"贾维斯"后用自然语言完成外卖下单至结算页、路线导航、跨 App 搜索等任务，所有不可逆操作都保留人的确认权。</p>
+      <p class="item"><b>语音交互链路：</b>麦克风前台服务 → KWS 离线唤醒（"贾维斯"拼音声韵母 + 英文音素词表）→ silero VAD 断句 → SenseVoice 中英识别 → 四层意图路由（控制词 / 回答引擎提问 / 点名 App 直达 / 开放式任务）→ LLM 判定 task 或 chat；播报优先 MiniMax 克隆音色、失败自动回落系统 TTS；播报中半双工丢弃麦克风音频防自激。</p>
+      <p class="item"><b>任务执行链路：</b>开放任务由 DeepSeek 规划 JSON 步骤 → Android 无障碍服务逐步执行（读屏理解 → 点击/输入/滚动）→ 步数与 token 双重预算熔断 → task_done 哨兵判定完成；沉淀"配方"记忆（相似任务 3 步流程免模型回放）与偏好记忆（自由文本逐条注入规划）；点名 App 走 Deep Link 直达跳过规划，全程 audit.jsonl 逐步留痕。</p>
+      <p class="item"><b>信任与验收：</b>支付、删除、发送等不可逆操作必须屏幕点击确认（语音确认不算数）；Galaxy S25 Ultra 真机跑通单/复合任务全链路，以"任务是否真正完成"为唯一验收口径，建立 8 任务回归矩阵持续复测。</p>
     </article>
+    <div class="footer"><span>周琦致 · AI 产品经理</span><span>2 / 3</span></div>
+  </section>
+
+  <section class="page page3">
+    <div class="topline"></div>
     <article class="project">
       <div class="project-head"><div><b>服务器运维助手 Server Ops Copilot · 智能运维平台</b><span class="project-title">产品负责人</span></div><div class="date">2026.10 — 至今</div></div>
       <p class="project-intro">面向企业私有化环境的智能运维副驾：把"发现 → 定位 → 决策 → 修复 → 沉淀"的运维闭环交给 AI 跑通，把"是否动手"的决策权始终留给运维人员。</p>
-      <p class="item"><b>核心链路设计：</b>定义五环闭环——告警归并成事件；AI 结合 SOP 知识库产出根因假设、置信度与动作清单（LLM 不可用时规则引擎兜底）；分级审批（高风险 L1+L2、动作可编辑、授权幂等防重）；Agent / SSH 双通道执行白名单动作（只传动作 key 不下发任意命令），执行后自动复采评估"执行成功≠修复成功"；复盘蒸馏回知识库供下次引用，形成越用越准的闭环。</p>
-      <p class="item"><b>产品化决策与交付：</b>独立完成需求评审版 PRD 与工作流设计；围绕"私有化、可审计、能降级"做取舍：变更操作 100% 授权、可回滚、可审计、全程留痕；接入飞书审批贴合办公流程，按"先跑通再补全"跑通"节点接入 → 数据上报 → 资产看板"端到端验证，5 台真实云主机走完纳管到修复全链路。</p>
+      <p class="item"><b>核心链路（五环闭环）：</b>告警接入去重归并成事件 → AI 结合 SOP 知识库产出根因假设、置信度与动作清单（LLM 不可用时规则引擎兜底）→ 分级审批（高风险 L1+L2、动作可二次编辑、授权幂等防重复执行）→ Agent(mTLS)/SSH 双通道执行白名单动作（服务端只传动作 key、不下发任意命令）→ 执行后自动复采评估（执行成功≠修复成功）→ 复盘蒸馏回知识库，形成"越用越准"的闭环。</p>
+      <p class="item"><b>数据通道与集成：</b>节点接入走 Agent(mTLS) 与 Prometheus 双通道上报资产与指标；审批通知与执行确认接入飞书贴合现有办公流；建议/授权/命令/验证全链路审计留痕、只增不改；另设对话排障台，先回答"有没有问题"再决定"要不要动手"。</p>
+      <p class="item"><b>产品化决策与交付：</b>独立完成需求评审版 PRD 与工作流设计；围绕"私有化、可审计、能降级"做取舍——变更操作 100% 授权、可回滚；按"先跑通再补全"完成"节点接入 → 数据上报 → 资产看板 → 修复执行"端到端验证，5 台真实云主机走完纳管到修复全链路。</p>
     </article>
     <article class="project">
-      <div class="project-head"><div><b>先声 PreVoice · AI 产品经理辅导助手</b><span class="project-title">产品负责人 · 个人项目</span></div><div class="date">2026.10 — 至今</div></div>
+      <div class="project-head"><div><b>先声 PreVoice · AI 产品经理辅导助手</b><span class="project-title">产品负责人</span></div><div class="date">2026.10 — 至今</div></div>
       <p class="project-intro">面向早期产品决策的多 Agent 合成调研平台：在真人调研之前，让虚拟调研团队把产品概念先跑一遍——概念测试、文案 A/B、PSM 定价、MaxDiff 优先级、焦点小组——半小时产出带可信度标签和真人验证清单的报告，明确"哪些结论可信、哪些必须去问真人"。</p>
-      <p class="item"><b>研究链路设计：</b>自然语言一句话发起研究，主管规划派单，主持人 / 分析师 / 受访者 Agent 协作执行；受访者按中国分层人群画像生成独立作答，主持人自动追问，全程事件可审计回溯；跑通"一句话发起 → 报告 → 真人验证清单"全链路，6 人概念测试约 17 秒、成本约 ¥0.5。</p>
-      <p class="item"><b>可信度与边界设计：</b>真实数据只进评分不进生成，统计检验定三级可信度标签、小样本强制降档"未校准"；受访者私有记忆不共享（消融实验实测共享会让样本趋同）；偏差结论自动生成真人验证清单，产品原则写明"合成调研不替代真人"。</p>
+      <p class="item"><b>多 Agent 协作链路：</b>一句话发起 → 主管 Router 规划研究方法并派单 → 主持人 / 分析师 / 质检 / N 个受访者 Agent 分工执行；受访者按 6 套中国分层人群画像生成、携带私有记忆独立作答，主持人按回答自动追问，事件流全程可审计回溯。</p>
+      <p class="item"><b>可信度与边界设计（差异化核心）：</b>真实校准数据（问卷 CSV 回灌）只进评分不进生成；统计检验定三级可信度标签，小样本强制降档"未校准"；受访者记忆严格隔离（消融实测：共享记忆会让有效样本趋同缩水）；偏差自动归因并生成真人验证清单——"合成调研不替代真人"写进产品原则。</p>
+      <p class="item"><b>成果：</b>跑通"一句话发起 → 报告 → 真人验证清单"全链路；6 人概念测试约 17 秒、成本约 ¥0.5；完成隔离/共享记忆消融对照实验。</p>
     </article>
     <div class="section"><span class="mark"></span><h2>教育背景与荣誉</h2><span class="line"></span></div>
     <p class="education"><b>2023 — 2027　河北科技师范学院</b>　数字媒体技术 · 本科（2027 届）</p>
     <p class="education">大三组建摄影创业团队并担任负责人 · 全国大学生红色全景资源创意展示大赛全国二等奖 · 大创计划省级创业项目奖</p>
-    <div class="footer"><span>周琦致 · AI 产品经理</span><span>2 / 2</span></div>
+    <div class="footer"><span>周琦致 · AI 产品经理</span><span>3 / 3</span></div>
   </section>
 </body>
 </html>
