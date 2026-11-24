@@ -7,18 +7,17 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouch = matchMedia('(hover: none), (pointer: coarse)').matches || 'ontouchstart' in window;
 const ACCENT = '#E2572B';
 const FONT = '-apple-system, "PingFang SC", "Helvetica Neue", sans-serif';
 const BG = '#0F0C0A';
 
 /* ---------- 渲染器 / 场景 ---------- */
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('scene'), antialias: false, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+renderer.setPixelRatio(devicePixelRatio);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.shadowMap.autoUpdate = false;
@@ -38,7 +37,7 @@ const HOME_CAM = new THREE.Vector3(1.0, 5.4, 21.8);
 let camScale = 1;
 const view = { pos: HOME_CAM.clone(), look: HOME_LOOK.clone() };
 
-const composer = new EffectComposer(renderer);
+const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, { samples: isTouch ? 4 : 8, type: THREE.HalfFloatType }));
 composer.addPass(new RenderPass(scene, camera));
 const gtao = new GTAOPass(scene, camera, 1, 1);
 gtao.output = GTAOPass.OUTPUT.Default;
@@ -49,8 +48,7 @@ composer.addPass(gtao);
 const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.22, 0.5, 0.95);
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
-const fxaa = new ShaderPass(FXAAShader);   // 末端抗锯齿：Composer 离屏渲染不走 MSAA，细纹理/边缘靠 FXAA 消除抖动
-composer.addPass(fxaa);
+// 清晰度拉满：渲染目标带 MSAA 采样，不再走 FXAA（FXAA 用模糊换抗锯齿，是屏幕文字发虚的最后一环）
 
 /* ---------- 工具 ---------- */
 const std = (color, roughness = 0.6, metalness = 0, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness, metalness, ...extra });
@@ -316,7 +314,7 @@ function drawProjects(c, w, h, title) {
   c.fillStyle = '#3A3A3E';
   [40, 68, 96].forEach(x => { c.beginPath(); c.arc(x, 40, 10, 0, 7); c.fill(); });
   c.fillStyle = '#86868B'; c.font = `30px ui-monospace, Menlo, monospace`; c.fillText(title, 140, 51);
-  const names = [['Stream Ready', 'AI 音频工作台'], ['MUYU', 'AI 影像控制台'], ['BRANDLOOM', '多 Agent 品牌全案'], ['上菜准', '智能划菜看板']];
+  const names = [['Stream Ready', 'AI 音频工作台'], ['先声 PreVoice', '多 Agent 合成调研'], ['Server Ops', 'AI 运维副驾'], ['Pocket Agent', '手机智能体']];
   const pad = 60, gw = (w - pad * 3) / 2, gh = (h - 130 - pad * 2) / 2;
 
   names.forEach(([t, s], i) => {
@@ -352,7 +350,8 @@ item('monitor', '显示器 · 产品项目', [-1.2, 1.44, -2.6], 0, g => {
     src.add(base, neck, hinge);
 
   } }));
-  const tex = canvasTex(1600, 890, (c, w, h) => drawProjects(c, w, h, 'projects — 周琦致'));
+  const tex = canvasTex(3840, 2136, (c) => { c.scale(2.4, 2.4); drawProjects(c, 1600, 890, 'projects — 周琦致'); });
+  tex.anisotropy = 16;
   const scr = new THREE.Mesh(new THREE.PlaneGeometry(0.597 * S, 0.331 * S), screenMat(tex));
   scr.position.set(0, 0.30 * S, 0.069 * S);
   scr.rotation.x = -0.124; // 贴合模型前盖玻璃约 7° 后倾角，防止下半部被玻璃挡住
@@ -427,15 +426,15 @@ item('notes', '便利贴 · 个人优势', [-5.75, 5.6, -3.66], 0, g => {
   const label = plane(1.15, 1.15, std('#fff', 0.9, 0, { transparent: true, map: canvasTex(512, 512, c => {
     c.fillStyle = 'rgba(28,27,25,.55)'; c.font = `32px ${FONT}`; c.fillText('NOTE', 48, 90);
     c.fillStyle = '#1C1B19'; c.font = `700 84px ${FONT}`; c.fillText('个人优势', 46, 260);
-    c.font = `600 64px ${FONT}`; c.fillText('× 4', 48, 360);
+    c.font = `600 64px ${FONT}`; c.fillText('× 5', 48, 360);
   }) }), -0.05, -0.05, 0.05);
   label.rotation.z = 0.03;
   g.add(label, mesh(new THREE.SphereGeometry(0.07, 16, 12), std(ACCENT, 0.4), 0, 0.5, 0.07));
 }, [0, 0, 2.6], [0, 0, 0.25]);
 
-item('camera', '相机 · 摄影与内容', [-4.3, 0.02, -0.4], 0.55, g => {
-  g.add(model('Camera_01', 11));
-}, [-10, 18, 2.2]);
+const camProp = group();
+camProp.add(model('Camera_01', 11));
+place(camProp, -4.3, 0.02, -0.4, 0.55);
 
 const phoneTex = canvasTex(400, 820, (c, w, h) => {
   const g = c.createLinearGradient(0, 0, 0, h);
@@ -676,6 +675,7 @@ const ray = new THREE.Raycaster();
 const ndc = new THREE.Vector2(9, 9);
 const pointer = { x: 0, y: 0 };
 const tip = document.getElementById('tip');
+if (isTouch) document.getElementById('hint').textContent = '点击桌上的物品';
 const panel = document.getElementById('panel');
 const scrim = document.getElementById('scrim');
 const hint = document.getElementById('hint');
@@ -683,19 +683,45 @@ let hovered = null, focus = null, busy = false;
 const meshes = Object.values(items).flatMap(i => { const a = []; i.group.traverse(o => o.isMesh && o.visible && a.push(o)); return a; });
 
 let ndcMoved = true;
+const swayNdc = { x: 0, y: 0 };
 addEventListener('pointermove', e => {
   pointer.x = e.clientX; pointer.y = e.clientY;
   ndc.set((e.clientX / innerWidth) * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
+  if (e.pointerType !== 'touch') { swayNdc.x = ndc.x; swayNdc.y = ndc.y; }
   ndcMoved = true;
-});
+}, { passive: true });
 document.addEventListener('pointerleave', () => { ndc.set(9, 9); ndcMoved = true; });
-renderer.domElement.addEventListener('click', () => { if (hovered) open(hovered); else if (focus) close(); });
-document.querySelectorAll('.dock button').forEach(b => b.addEventListener('click', () => (focus ? switchTo(b.dataset.key) : open(b.dataset.key))));
-scrim.addEventListener('click', close);
-document.getElementById('close').addEventListener('click', close);
-addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+renderer.domElement.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
 
-const narrow = () => innerWidth < 760;
+/* 触屏点按容错：未精确命中时，找屏幕空间里最近的物件 */
+const _pv = new THREE.Vector3();
+function nearestItem(px, py) {
+  let best = null, bestD = 72;
+  for (const it of Object.values(items)) {
+    const bb = new THREE.Box3();
+    it.group.traverse(o => { if (o.isMesh && o.visible) bb.expandByObject(o); });
+    if (bb.isEmpty()) continue;
+    bb.getCenter(_pv).project(camera);
+    if (_pv.z > 1) continue;
+    const sx = (_pv.x * 0.5 + 0.5) * innerWidth, sy = (-_pv.y * 0.5 + 0.5) * innerHeight;
+    const d = Math.hypot(sx - px, sy - py);
+    if (d < bestD) { bestD = d; best = it.key; }
+  }
+  return best;
+}
+renderer.domElement.addEventListener('click', e => {
+  pointer.x = e.clientX; pointer.y = e.clientY;
+  ndc.set((e.clientX / innerWidth) * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
+  if (hovered) open(hovered);
+  else if (!focus && isTouch) { const k = nearestItem(e.clientX, e.clientY); if (k) open(k); }
+  else if (focus) stepBack();
+});
+document.querySelectorAll('.dock button').forEach(b => b.addEventListener('click', () => (focus ? switchTo(b.dataset.key) : open(b.dataset.key))));
+scrim.addEventListener('click', stepBack);
+document.getElementById('close').addEventListener('click', stepBack);
+addEventListener('keydown', e => { if (e.key === 'Escape') stepBack(); });
+
+const narrow = () => innerWidth < 760 || innerHeight < 520;
 function shotFor(it) {
   const g = it.group;
   g.updateMatrixWorld(true);
@@ -753,12 +779,30 @@ function close() {
   flyCamera({ pos: HOME_CAM.clone().multiplyScalar(camScale), look: HOME_LOOK.clone() }, 1100, easeInOut, () => { busy = false; focus = null; });
 }
 
+function detailBack() {
+  const d = document.getElementById('pdetail');
+  if (!d || !d.classList.contains('on')) return false;
+  d.classList.remove('on');
+  d.innerHTML = '';
+  const t = document.querySelector('.p-laptop .tiles');
+  if (t) t.style.display = '';
+  const a = panel.querySelector('article.on');
+  if (a) a.scrollTop = 0;
+  return true;
+}
+function stepBack() {
+  if (busy) return;
+  if (focus === 'monitor' && detailBack()) return;
+  close();
+}
+
 function showPanel(key) {
   scrim.classList.add('on');
   panel.classList.add('open');
   panel.setAttribute('aria-hidden', 'false');
   document.querySelectorAll('.dock button').forEach(b => b.classList.toggle('on', b.dataset.key === key));
   const a = panel.querySelector(`[data-panel="${key}"]`);
+  if (key === 'monitor') detailBack();
   a.classList.add('on');
   requestAnimationFrame(() => requestAnimationFrame(() => a.classList.add('in')));
   document.getElementById('close').focus({ preventScroll: true });
@@ -770,6 +814,70 @@ function hidePanel(all) {
     a.classList.remove('in');
     setTimeout(() => a.classList.remove('on'), reduce ? 0 : 280);
   });
+}
+
+/* 显示器面板：项目卡 → 核心流程截图 */
+const PROJ = {
+  sr: {
+    title: 'Stream Ready', tag: '浏览器端 AI 音频母带工作台 · stream-ready.com',
+    flow: '上传 → 自动母带（冻结 V1）→ 源诊断 → 频段图谱/EQ 精修 → 平台响度预览 → 发行打包导出',
+    shots: [
+      ['shots/products/sr-1-studio.png', '① 上传完成：自动母带冻结 V1，波形 + 源诊断卡 + Chat 入口 + 平台响度预览'],
+      ['shots/products/sr-3-atlas.png', '② 对话式频段图谱：15 条白名单规则，每条标明正向/反向/风险——自然语言精修的入口'],
+      ['shots/products/sr-2-eq.png', '③ 手动精修：Master EQ + 宏旋钮（Width/Color/Air/Calm），下方是冻结的自动母带处理链'],
+      ['shots/products/sr-4-packaging.png', '④ 发行打包：响度遥测 + 封面 + 格式感知元数据，WAV/MP3/FLAC 导出'],
+    ],
+  },
+  pv: {
+    title: '先声 PreVoice', tag: '多 Agent 合成调研平台 · 「真人之前，先问一遍」',
+    flow: '一句话发起 → 分层人群 → 受访者作答/主持人追问 → 可信度报告 → 真人验证清单',
+    shots: [
+      ['shots/products/pv-0-workbench.png', '① 工作台：对话发起研究，右侧多 Agent 团队（主管/主持/分析/质检/受访者）+ 事件流 + 质检偏差告警'],
+      ['shots/products/pv-1-groups.png', '② 人群库：按中国分层画像生成受访者组（如银发人群 12 人、求职人群小样组）'],
+      ['shots/products/pv-2-study.png', '③ 调研执行：12 名受访者独立作答，每条可追问，全程事件可审计'],
+      ['shots/products/pv-3-report.png', '④ 报告：关键发现逐条标注可信度（未校准/偏差/已校准），附真人复核建议'],
+      ['shots/products/pv-4-cal.png', '⑤ 校准数据：上传真实问卷 CSV 回灌评分，「真实数据只进评分不进生成」'],
+    ],
+  },
+  soc: {
+    title: 'Server Ops Copilot', tag: 'AI 运维副驾 · 私有化、可审计、能降级',
+    flow: '告警接入 → 事件归并 → AI 诊断 → 分级审批 → 白名单执行 → 复采评估 → 知识沉淀',
+    shots: [
+      ['shots/products/soc-0-mon.png', '① 监控接入：Agent mTLS 遥测 + Prometheus 抓取双通道，双向 TLS 加密'],
+      ['shots/products/soc-1-overview.png', '② 总览：发现→诊断→决策→修复→沉淀五环一屏可见'],
+      ['shots/products/soc-3-detail.png', '③ 诊断：告警聚合成事件，AI 给出根因与处置建议'],
+      ['shots/products/soc-6-approval.png', '④ 决策：根因假设 + 置信度 + 动作清单，高风险需人工授权'],
+      ['shots/products/soc-5-audit.png', '⑤ 修复留痕：每次建议/授权/命令/验证全链路审计，只增不改'],
+      ['shots/products/soc-7-kb.png', '⑥ 沉淀：复盘结论蒸馏回知识库，供下次诊断引用——越用越准'],
+      ['shots/products/soc-6-chat.png', '⑦ 对话排障台：「先回答有没有问题，再决定要不要动手」'],
+    ],
+  },
+  pk: {
+    title: 'Pocket Agent', tag: 'Android 无障碍服务驱动的手机智能体 · J.A.R.V.I.S.',
+    flow: '「贾维斯」唤醒/文本下达 → 任务规划 → 无障碍逐步执行 → 配方固化沉淀 → 偏好记忆注入',
+    shots: [
+      ['shots/products/pk-1-hud.png', '① 待机 HUD：A11Y 无障碍在线、语音唤醒待命、Token 计量、任务输入 + 执行'],
+      ['shots/products/pk-2-amap.png', '② 真实执行：下达「打开高德地图搜索首都机场」后，真机被驱动到高德并呈现结果'],
+      ['shots/products/pk-4-done.png', '③ 任务完成：MISSION COMPLETE + 执行日志审计 + 「配方已固化 3 步流程，相似任务免模型回放」'],
+      ['shots/products/pk-3-config.png', '④ SYSTEM CONFIG：DeepSeek 接入、贾维斯唤醒+克隆音色播报、偏好记忆、配方管理'],
+    ],
+  },
+};
+{
+  const detail = document.getElementById('pdetail');
+  const tiles = document.querySelector('.p-laptop .tiles');
+  document.querySelectorAll('.tile[data-proj]').forEach(t => t.addEventListener('click', () => {
+    const p = PROJ[t.dataset.proj];
+    detail.innerHTML = `<button class="back">← 返回项目列表</button><h3>${p.title}</h3><p class="tag">${p.tag}</p><p class="flow">${p.flow}</p>` +
+      (p.shots.length ? `<div class="pshots">${p.shots.map(([s, c]) => s.endsWith('.mp4')
+        ? `<figure><video src="${s}" controls playsinline preload="metadata"></video><figcaption>${c}</figcaption></figure>`
+        : `<figure><img src="${s}" alt="${c}"><figcaption>${c}</figcaption></figure>`).join('')}</div>`
+        : `<p class="coming">${p.coming}</p>`);
+    tiles.style.display = 'none';
+    detail.classList.add('on');
+    detail.querySelector('.back').addEventListener('click', detailBack);
+    panel.querySelector('article.on').scrollTop = 0;
+  }));
 }
 
 {
@@ -784,24 +892,26 @@ function hidePanel(all) {
 setInterval(() => { clockTex.userData.redraw(); phoneTex.userData.redraw(); }, 20000);
 
 /* ---------- 渲染循环 ---------- */
-let pxCap = 4.2e6;
+let pxCap = Infinity;   // 清晰度拉满：上限解锁，fps 自适应降级时才接管
 function resize() {
   const a = innerWidth / innerHeight;
   camScale = a < 0.8 ? 1.9 : a < 1.3 ? 1.35 : 1;
-  const pr = PIXEL ? 0.16 : Math.min(devicePixelRatio, 1.5, Math.sqrt(pxCap / (innerWidth * innerHeight)));
+  scene.fog.near = 26 * camScale;   // 镜头后拉时雾要跟着远，不然竖屏整个场景泡在雾里
+  scene.fog.far = 52 * camScale;
+  const pr = PIXEL ? 0.16 : Math.min(devicePixelRatio, Math.sqrt(pxCap / (innerWidth * innerHeight)));
   if (PIXEL) renderer.domElement.style.imageRendering = 'pixelated';
   renderer.setPixelRatio(pr);
   renderer.setSize(innerWidth, innerHeight, false);
   composer.setPixelRatio(pr);
   composer.setSize(innerWidth, innerHeight);
-  gtao.setSize(innerWidth * pr * 0.6, innerHeight * pr * 0.6);
+  gtao.setSize(innerWidth * pr * (isTouch ? 0.5 : 0.75), innerHeight * pr * (isTouch ? 0.5 : 0.75));
   bloom.setSize(innerWidth * pr * 0.5, innerHeight * pr * 0.5);
-  fxaa.material.uniforms.resolution.value.set(1 / (innerWidth * pr), 1 / (innerHeight * pr));
   camera.aspect = a;
   camera.updateProjectionMatrix();
   if (!focus) view.pos.copy(HOME_CAM).multiplyScalar(camScale);
 }
 addEventListener('resize', resize);
+addEventListener('orientationchange', () => setTimeout(resize, 250));
 resize();
 
 const camPos = view.pos.clone().multiplyScalar(1.3).add(new THREE.Vector3(0, 1.5, 0));
@@ -819,7 +929,7 @@ function frame(now) {
   runTweens(now);
   const t = now / 1000;
 
-  const mx = ndc.x > 2 ? 0 : ndc.x, my = ndc.y > 2 ? 0 : ndc.y;
+  const mx = swayNdc.x > 2 ? 0 : swayNdc.x, my = swayNdc.y > 2 ? 0 : swayNdc.y;
   const k = focus ? 0.25 : 1;
   sway.set(mx * 1.2 * k, my * 0.5 * k, 0);
   const target = view.pos.clone().add(sway);
